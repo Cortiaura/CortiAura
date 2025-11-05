@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-dark-accent: #41234E;
+  --color-primary-start: #AF98E4;
+  --color-primary-end: #9965E8;
+  --color-secondary-accent: #4632C9;
+  --color-background-light: #F9F6FA;
+  --color-text-dark: #040207;
+}
+
+html, body, #__next {
+  height: 100%;
+}
+
+body {
+  @apply bg-[var(--color-background-light)] text-[var(--color-text-dark)];
+}
+
+.container-default {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, var(--color-primary-start), var(--color-primary-end));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.btn-gradient {
+  background: linear-gradient(90deg, var(--color-primary-start), var(--color-primary-end));
+}
+
+/* Slow, subtle pulse animation for aura backgrounds */
+@keyframes pulse-slow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.24;
+  }
+  50% {
+    transform: scale(1.07);
+    opacity: 0.34;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 10s ease-in-out infinite;
+}
+
+/* Additional very slow drift to make aura visible but gentle */
+@keyframes aura-drift {
+  0% {
+    transform: translateY(-2%) scale(1);
+  }
+  50% {
+    transform: translateY(2%) scale(1.04);
+  }
+  100% {
+    transform: translateY(-2%) scale(1);
+  }
+}
+
+/* Combined animation utility so we don't overwrite animation property */
+.aura-anim {
+  animation: pulse-slow 10s ease-in-out infinite, aura-drift 28s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-pulse-slow,
+  .aura-anim {
+    animation: none !important;
+  }
+}
