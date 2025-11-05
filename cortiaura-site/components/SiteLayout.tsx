@@ -14,10 +14,9 @@ const SiteLayout: React.FC<Props> = ({ children, className = '', transparentBg =
   return (
     <div className={`relative min-h-screen overflow-hidden ${transparentBg ? 'bg-transparent' : 'bg-[#0B0B1A]'} ${className}`}>
       <Head>
-        <link rel="icon" type="image/png" sizes="32x32" href="/assets/android-chrome512x512.png?v=2" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/assets/android-chrome512x512.png?v=2" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/assets/android-chrome512x512.png?v=2" />
-        <link rel="shortcut icon" href="/assets/android-chrome512x512.png?v=2" />
+        <link rel="icon" href="/assets/favicon.ico?v=2" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/android-chrome-512x512.png?v=2" />
+        <link rel="icon" type="image/png" sizes="512x512" href="/assets/android-chrome-512x512.png?v=2" />
         <meta name="theme-color" content="#0B0B1A" />
       </Head>
       <Header />

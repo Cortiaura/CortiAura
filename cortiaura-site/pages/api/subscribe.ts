@@ -15,34 +15,41 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
   const apiKey = process.env.MAILERLITE_API_KEY;
   const groupId = process.env.MAILERLITE_GROUP_ID;
 
-  // Option B: If no API key configured yet, mock success so we can verify UI flow
+  // API key is required for live calls
   if (!apiKey) {
-    return res.status(200).json({ ok: true });
+    return res.status(500).json({ ok: false, message: 'Missing MAILERLITE_API_KEY' });
   }
 
   try {
-    const mlRes = await fetch('https://api.mailerlite.com/api/v2/subscribers', {
+    const mlRes = await fetch('https://connect.mailerlite.com/api/subscribers', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        Accept: 'application/json',
         Authorization: `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
         email,
-        name,
-        fields: { role },
-        resubscribe: true,
+        fields: { name, role },
         ...(groupId ? { groups: [groupId] } : {}),
       }),
     });
 
-    if (mlRes.ok) {
-      return res.status(200).json({ ok: true });
+    if (mlRes.status === 200 || mlRes.status === 201) {
+      console.log('MailerLite success, sending response');
+      const responseData = { ok: true, message: 'Subscribed' };
+      console.log('Response data:', responseData);
+      return res
+        .status(200)
+        .setHeader('Content-Type', 'application/json')
+        .json(responseData);
     }
 
     const text = await mlRes.text();
-    return res.status(mlRes.status || 500).json({ ok: false, message: text || 'Subscription failed' });
+    console.error('MailerLite error:', mlRes.status, text);
+    return res.status(500).json({ ok: false, message: 'Subscription failed' });
   } catch (err) {
+    console.error('MailerLite request failed:', err);
     return res.status(500).json({ ok: false, message: 'Request failed' });
   }
 }
