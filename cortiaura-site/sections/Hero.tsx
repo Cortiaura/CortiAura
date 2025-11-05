@@ -29,7 +29,7 @@ const Hero: React.FC = () => {
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
           {/* Primary CTA: gradient fill */}
           <a
-            href="#waitlist"
+            href="/#get-involved"
             className="inline-flex items-center justify-center rounded-md px-6 py-3 text-white font-bold shadow-md transition hover:opacity-95"
             style={{
               background:

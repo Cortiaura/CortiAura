@@ -212,7 +212,7 @@ export default function AboutPage() {
 
             {/* Join the waitlist */}
             <a
-              href="#get-involved"
+              href="/#get-involved"
               className="inline-flex items-center justify-center rounded-md px-6 py-3 text-white font-semibold shadow-md transition hover:opacity-95 bg-gradient-to-r from-[#AF98E4] to-[#63D7C7]"
             >
               Join the waitlist
