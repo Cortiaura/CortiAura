@@ -30,7 +30,7 @@ const SiteFooter: React.FC = () => {
           <div className="mt-3 flex items-center gap-3">
             {/* LinkedIn */}
             <a
-              href="https://www.linkedin.com/company/cortiaura/"
+              href="https://www.linkedin.com/company/cortiaura"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="CortiAura on LinkedIn"
@@ -42,7 +42,7 @@ const SiteFooter: React.FC = () => {
             </a>
             {/* X (Twitter) */}
             <a
-              href="#"
+              href="https://x.com/CortiAura"
               aria-label="CortiAura on X"
               className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/5 text-white/80 hover:text-black hover:bg-white transition"
             >

@@ -186,7 +186,7 @@ export default function AboutPage() {
           <div className="inline-flex flex-wrap gap-4 justify-center">
             {/* Clinical collaborations */}
             <a
-              href="https://www.linkedin.com/company/cortiaura/"
+              href="https://www.linkedin.com/company/cortiaura"
               target="_blank"
               rel="noopener noreferrer"
               className="relative inline-flex rounded-md p-[1.5px]"
@@ -199,7 +199,7 @@ export default function AboutPage() {
 
             {/* Advisors & investors */}
             <a
-              href="https://www.linkedin.com/company/cortiaura/"
+              href="https://www.linkedin.com/company/cortiaura"
               target="_blank"
               rel="noopener noreferrer"
               className="relative inline-flex rounded-md p-[1.5px]"
