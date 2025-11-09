@@ -26,7 +26,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     await resend.emails.send({
       from: process.env.MAIL_FROM,
       to: process.env.MAIL_TO,
-      reply_to: email,
+      replyTo: email,
       subject: `[Contact] ${subject}`,
       text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
       html: `<p><strong>Name:</strong> ${name}</p><p><strong>Email:</strong> ${email}</p><p>${String(message).replace(/\n/g, '<br/>')}</p>`,
