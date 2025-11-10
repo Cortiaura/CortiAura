@@ -7,7 +7,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     return res.status(405).json({ ok: false, message: 'Method not allowed' });
   }
 
-  const { email, name, role } = req.body || {};
+  const { email, name, role, interest } = req.body || {};
   if (!email || typeof email !== 'string') {
     return res.status(400).json({ ok: false, message: 'Email is required' });
   }
@@ -30,7 +30,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
       },
       body: JSON.stringify({
         email,
-        fields: { name, role },
+        ...(name ? { name } : {}),
+        fields: { ...(interest ?? role ? { interest: (interest ?? role) } : {}) },
         ...(groupId ? { groups: [groupId] } : {}),
       }),
     });
