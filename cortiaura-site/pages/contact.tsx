@@ -66,7 +66,7 @@ export default function ContactPage() {
         <title>Contact — CortiAura™</title>
         <meta name="description" content="Contact CortiAura — send us your questions, partnership requests, or feedback." />
       </Head>
-      <main className="bg-[#0B0B1A] py-16">
+      <main className="bg-[#231F20] py-16">
         <section className="container mx-auto px-4 lg:px-8 max-w-3xl">
           <h1 className="text-3xl md:text-4xl font-semibold text-white text-center">Contact Us</h1>
           <p className="mt-3 text-center text-[#F9F6FA]/80">We welcome questions and collaborations. Email us at <a className="underline hover:text-white" href="mailto:Prashant@cortiaura.com">Prashant@cortiaura.com</a> or use the form below.</p>
@@ -80,7 +80,7 @@ export default function ContactPage() {
                   name="name"
                   value={form.name}
                   onChange={onChange}
-                  className="w-full rounded-md border border-white/10 bg-white/5 px-3 py-2 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[#63D7C7]"
+                  className="w-full rounded-md border border-white/10 bg-white/5 px-3 py-2 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[#970148]"
                   placeholder="Your name"
                 />
               </div>
@@ -139,8 +139,7 @@ export default function ContactPage() {
               <button
                 type="submit"
                 disabled={status.type === 'submitting'}
-                className="inline-flex items-center justify-center rounded-md px-6 py-3 text-white font-bold shadow-md transition hover:opacity-95 disabled:opacity-50"
-                style={{ background: 'linear-gradient(90deg, #AF98E4 0%, #63D7C7 100%)' }}
+                className="inline-flex items-center justify-center rounded-md px-6 py-3 text-white font-bold shadow-md transition hover:opacity-95 disabled:opacity-50 bg-gradient-to-r from-[#970148] to-[#FBDDCF]"
               >
                 {status.type === 'submitting' ? 'Sending…' : 'Send Message'}
               </button>

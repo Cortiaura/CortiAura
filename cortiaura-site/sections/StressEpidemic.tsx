@@ -2,9 +2,9 @@ import React from 'react';
 
 const StressEpidemic: React.FC = () => {
   return (
-    <section id="stress" className="relative py-24 md:py-32 bg-[#0B0B1A]/95 backdrop-blur-sm">
+    <section id="stress" className="relative py-24 md:py-32 bg-[#231F20] backdrop-blur-sm">
       {/* Subtle top glow for smooth transition from hero */}
-      <div className="absolute -top-16 inset-x-0 h-16 bg-gradient-to-b from-[#41234E]/40 to-transparent" />
+      <div className="absolute -top-16 inset-x-0 h-16 bg-gradient-to-b from-[#970148]/40 to-transparent" />
 
       <div className="container-default">
         <div className="max-w-3xl mx-auto text-center">
@@ -24,7 +24,7 @@ const StressEpidemic: React.FC = () => {
             <div aria-hidden className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-25 transition duration-500" style={{ background: 'radial-gradient(50% 50% at 50% 50%, rgba(175,152,228,0.5), transparent 60%)' }} />
             <div className="relative">
               <div className="text-2xl">
-                <span className="bg-[linear-gradient(90deg,#AF98E4,#63D7C7)] bg-clip-text text-transparent">⚡</span>
+                <span className="bg-[linear-gradient(90deg,#970148,#FBDDCF)] bg-clip-text text-transparent">⚡</span>
               </div>
               <h3 className="mt-3 text-white text-lg font-semibold">1 in 3 adults report daily stress</h3>
             </div>
@@ -35,7 +35,7 @@ const StressEpidemic: React.FC = () => {
             <div aria-hidden className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-25 transition duration-500" style={{ background: 'radial-gradient(50% 50% at 50% 50%, rgba(175,152,228,0.5), transparent 60%)' }} />
             <div className="relative">
               <div className="text-2xl">
-                <span className="bg-[linear-gradient(90deg,#AF98E4,#63D7C7)] bg-clip-text text-transparent">🌙</span>
+                <span className="bg-[linear-gradient(90deg,#970148,#FBDDCF)] bg-clip-text text-transparent">🌙</span>
               </div>
               <h3 className="mt-3 text-white text-lg font-semibold">↑45% sleep disruption since 2020</h3>
             </div>
@@ -46,7 +46,7 @@ const StressEpidemic: React.FC = () => {
             <div aria-hidden className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-25 transition duration-500" style={{ background: 'radial-gradient(50% 50% at 50% 50%, rgba(175,152,228,0.5), transparent 60%)' }} />
             <div className="relative">
               <div className="text-2xl">
-                <span className="bg-[linear-gradient(90deg,#AF98E4,#63D7C7)] bg-clip-text text-transparent">💼</span>
+                <span className="bg-[linear-gradient(90deg,#970148,#FBDDCF)] bg-clip-text text-transparent">💼</span>
               </div>
               <h3 className="mt-3 text-white text-lg font-semibold">$300B+ annual productivity loss</h3>
             </div>

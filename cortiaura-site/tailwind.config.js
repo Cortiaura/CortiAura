@@ -8,13 +8,35 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        darkAccent: '#41234E',
-        secondaryAccent: '#4632C9',
-        backgroundLight: '#F9F6FA',
-        textDark: '#040207'
+        // CortiAura brand palette
+        brandPrimary: '#970148', // Rose Garnet
+        brandPrimaryLight: '#FBDDCF',
+        brandDark: '#231F20',
+        brandMisty: '#F9E4E5',
+        brandWhite: '#FFFFFF',
       },
       backgroundImage: {
-        primaryGradient: 'linear-gradient(90deg, #AF98E4 0%, #9965E8 100%)'
+        primaryGradient: 'linear-gradient(90deg, #970148 0%, #FBDDCF 100%)'
+      },
+      fontFamily: {
+        // Approximate brand typography
+        sans: [
+          'Gotham',
+          'system-ui',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Segoe UI',
+          'Roboto',
+          'Helvetica Neue',
+          'Arial',
+          'sans-serif',
+        ],
+        display: [
+          'EB Garamond',
+          'Garamond',
+          'Georgia',
+          'serif',
+        ],
       }
     },
   },

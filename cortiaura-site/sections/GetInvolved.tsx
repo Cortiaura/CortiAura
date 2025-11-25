@@ -20,7 +20,7 @@ const GetInvolved: React.FC = () => {
         if (submissionSuccessful.current) {
           const successMessage = "You're on the CortiAura waitlist — welcome to the future of neuro‑modulation.";
           statusElement.textContent = successMessage;
-          statusElement.className = `mt-6 text-[#63D7C7]/90`;
+          statusElement.className = `mt-6 text-[#970148]/90`;
         } else if (status && statusType === 'error') {
           statusElement.textContent = status;
           statusElement.className = `mt-6 text-red-300/90`;
@@ -144,18 +144,18 @@ const GetInvolved: React.FC = () => {
             name="name"
             placeholder="Your Name"
             required
-            className="w-full rounded-md bg-transparent border border-white/20 px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-1 focus:ring-[#63D7C7]"
+            className="w-full rounded-md bg-transparent border border-white/20 px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-1 focus:ring-[#970148]"
           />
           <input
             type="email"
             name="email"
             placeholder="Your Email"
             required
-            className="w-full rounded-md bg-transparent border border-white/20 px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-1 focus:ring-[#63D7C7]"
+            className="w-full rounded-md bg-transparent border border-white/20 px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-1 focus:ring-[#970148]"
           />
           <select
             name="role"
-            className="w-full rounded-md bg-transparent border border-white/20 px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-1 focus:ring-[#63D7C7]"
+            className="w-full rounded-md bg-transparent border border-white/20 px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-1 focus:ring-[#970148]"
             defaultValue=""
           >
             <option value="" className="text-black">I'm interested as...</option>
@@ -167,7 +167,7 @@ const GetInvolved: React.FC = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3 rounded-md bg-gradient-to-r from-[#AF98E4] to-[#63D7C7] text-white font-semibold hover:opacity-90 transition disabled:opacity-60"
+            className="w-full py-3 rounded-md bg-gradient-to-r from-[#970148] to-[#FBDDCF] text-white font-semibold hover:opacity-90 transition disabled:opacity-60"
           >
             {loading ? 'Submitting...' : 'Join the CortiAura Waitlist'}
           </button>
@@ -176,14 +176,14 @@ const GetInvolved: React.FC = () => {
         <p
           id="status"
           className={
-            `mt-6 ${statusType === 'success' ? 'text-[#63D7C7]/90' : statusType === 'error' ? 'text-red-300/90' : 'text-[#63D7C7]/80'}`
+            `mt-6 ${statusType === 'success' ? 'text-[#970148]/90' : statusType === 'error' ? 'text-red-300/90' : 'text-[#970148]/80'}`
           }
         >
           {status}
         </p>
       </div>
 
-      <div className="absolute -top-16 inset-x-0 h-16 bg-gradient-to-b from-[#0B0B1A]/0 to-[#0B0B1A]" />
+      <div className="absolute -top-16 inset-x-0 h-16 bg-gradient-to-b from-[#231F20]/0 to-[#231F20]" />
     </section>
   );
 };

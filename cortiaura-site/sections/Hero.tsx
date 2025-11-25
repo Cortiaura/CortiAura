@@ -6,7 +6,7 @@ const Hero: React.FC = () => {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Background gradient */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#0B0B1A] to-[#41234E]" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#0B0B1A] to-[#970148]" />
 
       {/* Very subtle animated aura (respects reduced motion via CSS) */}
       <div
@@ -33,7 +33,7 @@ const Hero: React.FC = () => {
             className="inline-flex items-center justify-center rounded-md px-6 py-3 text-white font-bold shadow-md transition hover:opacity-95"
             style={{
               background:
-                'linear-gradient(90deg, #AF98E4 0%, #63D7C7 100%)',
+                'linear-gradient(90deg, #970148 0%, #FBDDCF 100%)',
             }}
           >
             Join the Waitlist
@@ -45,7 +45,7 @@ const Hero: React.FC = () => {
             className="relative inline-flex rounded-md p-[1.5px]"
             style={{
               background:
-                'linear-gradient(90deg, #AF98E4 0%, #63D7C7 100%)',
+                'linear-gradient(90deg, #970148 0%, #FBDDCF 100%)',
             }}
           >
             <span className="inline-flex h-full w-full items-center justify-center rounded-[calc(0.375rem-1.5px)] px-6 py-3 text-white/90 bg-transparent backdrop-blur-[1px] transition-colors hover:bg-white/5">

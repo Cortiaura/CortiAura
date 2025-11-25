@@ -25,7 +25,7 @@ const CookieBanner: React.FC = () => {
             <div className="text-sm">
               <p>We use essential cookies to improve your experience. Please confirm you consent to essential cookies only.</p>
               <label className="mt-2 inline-flex items-center gap-2">
-                <input type="checkbox" className="accent-[#63D7C7]" checked={checked} onChange={(e) => setChecked(e.target.checked)} />
+                <input type="checkbox" className="accent-[#970148]" checked={checked} onChange={(e) => setChecked(e.target.checked)} />
                 <span className="text-[#F9F6FA]/80">I agree to essential cookies only.</span>
               </label>
             </div>
@@ -36,7 +36,7 @@ const CookieBanner: React.FC = () => {
                   try { window.localStorage.setItem(LS_KEY, 'true'); } catch {}
                   setVisible(false);
                 }}
-                className={`inline-flex items-center justify-center rounded-md px-4 py-2 text-sm text-white bg-gradient-to-r from-[#AF98E4] to-[#63D7C7] hover:opacity-90 transition ${checked ? '' : 'opacity-50 pointer-events-none'}`}
+                className={`inline-flex items-center justify-center rounded-md px-4 py-2 text-sm text-white bg-gradient-to-r from-[#970148] to-[#FBDDCF] hover:opacity-90 transition ${checked ? '' : 'opacity-50 pointer-events-none'}`}
               >
                 Accept
               </button>

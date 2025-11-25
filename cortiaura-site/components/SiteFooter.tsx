@@ -6,7 +6,7 @@ const SiteFooter: React.FC = () => {
       <div className="container mx-auto px-4 lg:px-8 py-12 grid gap-8 md:grid-cols-3">
         <div>
           <a href="/" className="flex items-center gap-2 text-white/90">
-            <img src="/assets/logo-dark.png" alt="CortiAura" className="h-10 md:h-12 w-auto" />
+            <img src="/assets/logo.svg" alt="CortiAura" className="h-10 md:h-12 w-auto" />
             <span className="sr-only">CortiAura</span>
           </a>
           <p className="mt-3 text-[#F9F6FA]/75 max-w-sm">

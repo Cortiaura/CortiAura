@@ -3,12 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --color-dark-accent: #41234E;
-  --color-primary-start: #AF98E4;
-  --color-primary-end: #9965E8;
-  --color-secondary-accent: #4632C9;
-  --color-background-light: #F9F6FA;
-  --color-text-dark: #040207;
+  /* CortiAura brand colors */
+  --color-brand-primary: #970148;
+  --color-brand-primary-light: #FBDDCF;
+  --color-brand-dark: #231F20;
+  --color-brand-misty: #F9E4E5;
+  --color-brand-background-light: #F9E4E5;
+  --color-brand-text-dark: #231F20;
 }
 
 html, body, #__next {
@@ -16,7 +17,7 @@ html, body, #__next {
 }
 
 body {
-  @apply bg-[var(--color-background-light)] text-[var(--color-text-dark)];
+  @apply bg-[var(--color-brand-background-light)] text-[var(--color-brand-text-dark)] font-sans;
 }
 
 .container-default {
@@ -24,14 +25,14 @@ body {
 }
 
 .gradient-text {
-  background: linear-gradient(90deg, var(--color-primary-start), var(--color-primary-end));
+  background: linear-gradient(90deg, var(--color-brand-primary), var(--color-brand-primary-light));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
 .btn-gradient {
-  background: linear-gradient(90deg, var(--color-primary-start), var(--color-primary-end));
+  background: linear-gradient(90deg, var(--color-brand-primary), var(--color-brand-primary-light));
 }
 
 /* Slow, subtle pulse animation for aura backgrounds */

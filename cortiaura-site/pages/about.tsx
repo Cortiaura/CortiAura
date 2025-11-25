@@ -79,7 +79,7 @@ export default function AboutPage() {
             />
           </div>
         </div>
-        <div className="pointer-events-none absolute -bottom-16 inset-x-0 h-16 bg-gradient-to-b from-transparent to-[#0B0B1A]" />
+        <div className="pointer-events-none absolute -bottom-16 inset-x-0 h-16 bg-gradient-to-b from-transparent to-[#231F20]" />
       </section>
 
       {/* Founder */}
@@ -190,7 +190,7 @@ export default function AboutPage() {
               target="_blank"
               rel="noopener noreferrer"
               className="relative inline-flex rounded-md p-[1.5px]"
-              style={{ background: 'linear-gradient(90deg, #AF98E4 0%, #63D7C7 100%)' }}
+              style={{ background: 'linear-gradient(90deg, #970148 0%, #FBDDCF 100%)' }}
             >
               <span className="inline-flex items-center justify-center rounded-[calc(0.375rem-1.5px)] px-6 py-3 text-white/90 bg-transparent backdrop-blur-[1px] hover:bg-white/5 transition-colors">
                 Clinical collaborations
@@ -213,7 +213,7 @@ export default function AboutPage() {
             {/* Join the waitlist */}
             <a
               href="/#get-involved"
-              className="inline-flex items-center justify-center rounded-md px-6 py-3 text-white font-semibold shadow-md transition hover:opacity-95 bg-gradient-to-r from-[#AF98E4] to-[#63D7C7]"
+              className="inline-flex items-center justify-center rounded-md px-6 py-3 text-white font-semibold shadow-md transition hover:opacity-95 bg-gradient-to-r from-[#970148] to-[#FBDDCF]"
             >
               Join the waitlist
             </a>
