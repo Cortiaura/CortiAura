@@ -127,6 +127,50 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Co-Founder */}
+      <section className="relative py-16 md:py-24">
+        <div className="container mx-auto px-4 lg:px-8 grid lg:grid-cols-2 gap-10 items-start">
+          <div className="relative w-full aspect-square max-w-md justify-self-start rounded-2xl overflow-hidden order-1 lg:order-1">
+            <div className="absolute inset-0 bg-white/5 ring-1 ring-white/10 rounded-2xl" />
+            <Image
+              src="/assets/team/ratnakar-mishra.jpg"
+              alt="Portrait of Dr. Ratnakar Mishra"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover object-[50%_20%]"
+              onError={(e) => {
+                (e.currentTarget as HTMLImageElement).src = '/assets/gradient-bg.svg';
+              }}
+            />
+          </div>
+          <div className="max-w-3xl order-2 lg:order-2">
+            <h2 className="text-2xl md:text-3xl font-semibold text-white">Co-Founder — Dr. Ratnakar Mishra</h2>
+            <p className="mt-4 text-[#F9F6FA]/85">
+              Trained as a Clinical Neuroscientist, Dr. Ratnakar Mishra has worked across leading academic
+              centres and pharmaceutical/biotech teams in neurodegeneration, neuro-ophthalmology, and rare
+              diseases. At CortiAura™, he serves as Co-Founder and Chief Scientific Officer, guiding the
+              neuroscience behind how gentle neuromodulation might help the body restore balance.
+            </p>
+            <h3 className="sr-only">Highlights</h3>
+            <ul className="mt-6 space-y-2 text-[#F9F6FA]/80">
+              <li className="flex gap-2"><span>•</span><span>15+ years of experience in neuroscience and neuro-ophthalmology research</span></li>
+              <li className="flex gap-2"><span>•</span><span>Ph.D. in Biochemistry and Neuroscience (synaptic connectivity), University of Goettingen, Germany</span></li>
+              <li className="flex gap-2"><span>•</span><span>Postdoctoral training in Clinical Neuroscience at the University of Cambridge, UK</span></li>
+              <li className="flex gap-2"><span>•</span><span>Senior scientist roles across Astellas Pharma Cambridge and Medinect Ophtho, Belfast</span></li>
+              <li className="flex gap-2"><span>•</span><span>Research spanning neurodegenerative pathways, biomarkers, synaptic plasticity, neuronal protein trafficking, and mitochondrial and rare diseases</span></li>
+              <li className="flex gap-2"><span>•</span><span>Published 10+ high-impact neuroscience papers, with grants from organisations including Fight for Sight UK, Addenbrooke's Trust, and Boehringer Ingelheim</span></li>
+            </ul>
+            <div className="mt-8">
+              <h3 className="text-white font-medium">Mission</h3>
+              <p className="mt-2 text-[#F9F6FA]/80">
+                To explore neuroscience-supported, evidence-led and ethical neurotechnology that can bring
+                calm into everyday life through gentle, non-invasive, non-drug approaches.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Team */}
       {team.length > 0 && (
         <section className="relative py-12 md:py-16">
