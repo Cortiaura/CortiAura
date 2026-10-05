@@ -1,44 +1,31 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-    "./sections/**/*.{js,ts,jsx,tsx}"
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+    './sections/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {
       colors: {
-        // CortiAura brand palette
-        brandPrimary: '#970148', // Rose Garnet
-        brandPrimaryLight: '#FBDDCF',
-        brandDark: '#231F20',
-        brandMisty: '#F9E4E5',
-        brandWhite: '#FFFFFF',
-      },
-      backgroundImage: {
-        primaryGradient: 'linear-gradient(90deg, #970148 0%, #FBDDCF 100%)'
+        // CortiAura brand palette (brand standards)
+        garnet: '#970148', // Rose Garnet: primary accent
+        imperial: '#680238', // Imperial Purple: deep sections
+        raisin: '#231F20', // Raisin Black: text and dark sections
+        misty: '#F9E4E5', // Misty Rose: soft backgrounds
+        blush: '#FBDDCF', // Pale Pink: highlights on dark
+        ink: '#4A4446', // body text on light backgrounds
+        muted: '#6B6365', // captions and small print
+        line: '#EFE3E4', // borders on light backgrounds
       },
       fontFamily: {
-        // Approximate brand typography
-        sans: [
-          'Gotham',
-          'system-ui',
-          '-apple-system',
-          'BlinkMacSystemFont',
-          'Segoe UI',
-          'Roboto',
-          'Helvetica Neue',
-          'Arial',
-          'sans-serif',
-        ],
-        display: [
-          'EB Garamond',
-          'Garamond',
-          'Georgia',
-          'serif',
-        ],
-      }
+        sans: ['"Instrument Sans"', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Arial', 'sans-serif'],
+        display: ['"EB Garamond"', 'Garamond', 'Georgia', 'serif'],
+      },
+      maxWidth: {
+        site: '1200px',
+      },
     },
   },
   plugins: [],
-}
+};

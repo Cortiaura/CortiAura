@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import SiteLayout from '../components/SiteLayout';
+import PageHeader from '../components/PageHeader';
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
@@ -63,85 +64,60 @@ export default function ContactPage() {
   return (
     <SiteLayout>
       <Head>
-        <title>Contact — CortiAura™</title>
-        <meta name="description" content="Contact CortiAura — send us your questions, partnership requests, or feedback." />
+        <title>Contact | CortiAura</title>
+        <meta name="description" content="Contact CortiAura with questions, clinical or research collaboration ideas, or feedback." />
+        <link rel="canonical" href="https://cortiaura.com/contact" />
       </Head>
-      <main className="bg-[#231F20] py-16">
-        <section className="container mx-auto px-4 lg:px-8 max-w-3xl">
-          <h1 className="text-3xl md:text-4xl font-semibold text-white text-center">Contact Us</h1>
-          <p className="mt-3 text-center text-[#F9F6FA]/80">We welcome questions and collaborations. Email us at <a className="underline hover:text-white" href="mailto:Prashant@cortiaura.com">Prashant@cortiaura.com</a> or use the form below.</p>
-
-          <form onSubmit={onSubmit} className="mt-8 space-y-4">
-            <div className="grid md:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-sm text-white/80 mb-1" htmlFor="name">Name</label>
-                <input
-                  id="name"
-                  name="name"
-                  value={form.name}
-                  onChange={onChange}
-                  className="w-full rounded-md border border-white/10 bg-white/5 px-3 py-2 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[#970148]"
-                  placeholder="Your name"
-                />
+      <main>
+        <PageHeader
+          eyebrow="Contact"
+          title="Get in touch"
+          intro={
+            <>
+              We welcome questions and collaborations, especially from clinicians and researchers in gastroenterology and
+              neuroscience. Email{' '}
+              <a className="text-garnet underline underline-offset-2" href="mailto:Prashant@cortiaura.com">
+                Prashant@cortiaura.com
+              </a>{' '}
+              or use the form below.
+            </>
+          }
+        />
+        <section className="container-site max-w-[760px] py-14">
+          <form onSubmit={onSubmit} className="flex flex-col gap-5" noValidate>
+            <div className="flex flex-wrap gap-5">
+              <div className="flex min-w-0 flex-[1_1_240px] flex-col gap-1.5">
+                <label className="field-label" htmlFor="name">Name</label>
+                <input id="name" name="name" value={form.name} onChange={onChange} className="field" autoComplete="name" />
               </div>
-              <div>
-                <label className="block text-sm text-white/80 mb-1" htmlFor="email">Email</label>
-                <input
-                  id="email"
-                  type="email"
-                  name="email"
-                  value={form.email}
-                  onChange={onChange}
-                  className="w-full rounded-md border border-white/10 bg-white/5 px-3 py-2 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[#63D7C7]"
-                  placeholder="you@example.com"
-                />
+              <div className="flex min-w-0 flex-[1_1_240px] flex-col gap-1.5">
+                <label className="field-label" htmlFor="email">Email</label>
+                <input id="email" type="email" name="email" value={form.email} onChange={onChange} className="field" autoComplete="email" />
               </div>
             </div>
-
-            <div>
-              <label className="block text-sm text-white/80 mb-1" htmlFor="subject">Subject</label>
-              <input
-                id="subject"
-                name="subject"
-                value={form.subject}
-                onChange={onChange}
-                className="w-full rounded-md border border-white/10 bg-white/5 px-3 py-2 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[#63D7C7]"
-                placeholder="How can we help?"
-              />
+            <div className="flex flex-col gap-1.5">
+              <label className="field-label" htmlFor="subject">Subject</label>
+              <input id="subject" name="subject" value={form.subject} onChange={onChange} className="field" />
             </div>
-
-            <div>
-              <label className="block text-sm text-white/80 mb-1" htmlFor="message">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                rows={6}
-                value={form.message}
-                onChange={onChange}
-                className="w-full rounded-md border border-white/10 bg-white/5 px-3 py-2 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[#63D7C7]"
-                placeholder="Share details about your query or interest"
-              />
+            <div className="flex flex-col gap-1.5">
+              <label className="field-label" htmlFor="message">Message</label>
+              <textarea id="message" name="message" rows={6} value={form.message} onChange={onChange} className="field py-3" />
             </div>
 
             {status.type !== 'idle' && (
-              <p className={
-                status.type === 'error'
-                  ? 'text-sm text-red-400'
-                  : status.type === 'success'
-                  ? 'text-sm text-emerald-400'
-                  : 'text-sm text-[#F9F6FA]/80'
-              }>
+              <p
+                role="status"
+                className={
+                  status.type === 'error' ? 'text-[15px] text-red-700' : status.type === 'success' ? 'text-[15px] text-green-800' : 'text-[15px] text-ink'
+                }
+              >
                 {status.message || (status.type === 'submitting' ? 'Sending…' : '')}
               </p>
             )}
 
-            <div className="pt-2">
-              <button
-                type="submit"
-                disabled={status.type === 'submitting'}
-                className="inline-flex items-center justify-center rounded-md px-6 py-3 text-white font-bold shadow-md transition hover:opacity-95 disabled:opacity-50 bg-gradient-to-r from-[#970148] to-[#FBDDCF]"
-              >
-                {status.type === 'submitting' ? 'Sending…' : 'Send Message'}
+            <div>
+              <button type="submit" disabled={status.type === 'submitting'} className="btn-primary">
+                {status.type === 'submitting' ? 'Sending…' : 'Send message'}
               </button>
             </div>
           </form>

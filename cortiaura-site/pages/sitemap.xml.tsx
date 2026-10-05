@@ -3,7 +3,7 @@ import { getAllPosts } from '../lib/posts';
 
 const SITE_URL = 'https://cortiaura.com';
 
-const STATIC_PAGES = ['', '/about', '/blog', '/news', '/contact', '/privacy', '/cookies'];
+const STATIC_PAGES = ['', '/about', '/founding', '/blog', '/news', '/contact'];
 
 function buildSitemap(): string {
   const posts = getAllPosts();

@@ -3,75 +3,112 @@
 @tailwind utilities;
 
 :root {
-  /* CortiAura brand colors */
-  --color-brand-primary: #970148;
-  --color-brand-primary-light: #FBDDCF;
-  --color-brand-dark: #231F20;
-  --color-brand-misty: #F9E4E5;
-  --color-brand-background-light: #F9E4E5;
-  --color-brand-text-dark: #231F20;
+  --color-garnet: #970148;
+  --color-imperial: #680238;
+  --color-raisin: #231f20;
+  --color-misty: #f9e4e5;
+  --color-blush: #fbddcf;
 }
 
-html, body, #__next {
-  height: 100%;
-}
-
-body {
-  @apply bg-[var(--color-brand-background-light)] text-[var(--color-brand-text-dark)] font-sans;
-}
-
-.container-default {
-  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
-}
-
-.gradient-text {
-  background: linear-gradient(90deg, var(--color-brand-primary), var(--color-brand-primary-light));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.btn-gradient {
-  background: linear-gradient(90deg, var(--color-brand-primary), var(--color-brand-primary-light));
-}
-
-/* Slow, subtle pulse animation for aura backgrounds */
-@keyframes pulse-slow {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 0.24;
-  }
-  50% {
-    transform: scale(1.07);
-    opacity: 0.34;
-  }
-}
-
-.animate-pulse-slow {
-  animation: pulse-slow 10s ease-in-out infinite;
-}
-
-/* Additional very slow drift to make aura visible but gentle */
-@keyframes aura-drift {
-  0% {
-    transform: translateY(-2%) scale(1);
-  }
-  50% {
-    transform: translateY(2%) scale(1.04);
-  }
-  100% {
-    transform: translateY(-2%) scale(1);
-  }
-}
-
-/* Combined animation utility so we don't overwrite animation property */
-.aura-anim {
-  animation: pulse-slow 10s ease-in-out infinite, aura-drift 28s linear infinite;
+html {
+  scroll-behavior: smooth;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-pulse-slow,
-  .aura-anim {
-    animation: none !important;
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  @apply bg-white text-raisin font-sans antialiased;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+@layer components {
+  .container-site {
+    @apply mx-auto w-full max-w-site px-6;
+  }
+
+  .eyebrow {
+    @apply text-sm font-semibold uppercase tracking-[0.14em] text-garnet;
+  }
+
+  .eyebrow-light {
+    @apply text-sm font-semibold uppercase tracking-[0.14em] text-blush;
+  }
+
+  .heading-xl {
+    @apply font-display font-medium text-[44px] leading-[1.04] tracking-[-0.01em] md:text-[64px] lg:text-[72px];
+  }
+
+  .heading-lg {
+    @apply font-display font-medium text-[34px] leading-[1.1] md:text-[44px] lg:text-[48px];
+  }
+
+  .heading-md {
+    @apply font-display font-medium text-[26px] leading-[1.15] md:text-[30px];
+  }
+
+  .btn-primary {
+    @apply inline-flex min-h-[52px] items-center justify-center rounded-md bg-garnet px-7 font-semibold text-white transition-colors hover:bg-imperial focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-garnet disabled:opacity-60;
+  }
+
+  .btn-outline {
+    @apply inline-flex min-h-[52px] items-center justify-center rounded-md border-[1.5px] border-raisin px-7 font-semibold text-raisin transition-colors hover:bg-raisin hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-raisin;
+  }
+
+  .btn-white {
+    @apply inline-flex min-h-[52px] items-center justify-center rounded-md bg-white px-7 font-semibold text-imperial transition-colors hover:bg-blush focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white;
+  }
+
+  .field {
+    @apply min-h-[48px] w-full rounded-lg border-[1.5px] border-[#CDBFC2] bg-white px-3.5 text-raisin placeholder:text-muted focus:border-garnet focus:outline-none focus:ring-2 focus:ring-garnet/20;
+  }
+
+  .field-label {
+    @apply text-[15px] font-semibold;
+  }
+
+  /* Long-form article typography (blog posts and policy pages) */
+  .article {
+    @apply text-[18px] leading-[1.7] text-ink;
+  }
+  .article h2 {
+    @apply mt-12 font-display text-[32px] font-medium leading-tight text-raisin;
+  }
+  .article h3 {
+    @apply mt-10 font-display text-[26px] font-medium leading-tight text-raisin;
+  }
+  .article p {
+    @apply mt-5;
+  }
+  .article ul {
+    @apply mt-5 list-disc space-y-2 pl-6;
+  }
+  .article ol {
+    @apply mt-5 list-decimal space-y-2 pl-6;
+  }
+  .article a {
+    @apply text-garnet underline underline-offset-2 hover:text-imperial;
+  }
+  .article strong {
+    @apply font-semibold text-raisin;
+  }
+  .article hr {
+    @apply my-12 border-line;
+  }
+  .article .references {
+    @apply mt-12 border-t border-line pt-8 text-[15px] leading-relaxed text-muted;
+  }
+  .article .references h2 {
+    @apply mt-0 font-sans text-base font-semibold text-ink;
+  }
+  .article .references ol {
+    @apply mt-3;
+  }
+  .article .references a {
+    @apply text-muted;
   }
 }

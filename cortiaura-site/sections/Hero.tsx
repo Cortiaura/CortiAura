@@ -1,77 +1,36 @@
 import React from 'react';
+import Link from 'next/link';
 
 const Hero: React.FC = () => {
   return (
-    <section
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
-    >
-      {/* Background gradient */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#0B0B1A] to-[#970148]" />
-
-      {/* Very subtle animated aura (respects reduced motion via CSS) */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10 [background:radial-gradient(60%_60%_at_50%_45%,rgba(175,152,228,.18),transparent_60%)] aura-anim"
-      />
-
-      <div className="container-default">
-        <div className="max-w-3xl mx-auto text-center">
-          <h1 className="font-semibold text-white text-3xl sm:text-4xl md:text-5xl leading-tight">
-            <span className="block">The world is stressed.</span>
-            <span className="block">Our bodies are listening.</span>
-          </h1>
-
-          <p className="mt-5 text-[#F9F6FA] text-base sm:text-lg">
-            CortiAura™ is a neuro-wellness innovation exploring a future where the body’s stress response is harmonised through science and resonance.
+    <section className="bg-white">
+      <div className="container-site flex flex-wrap items-center gap-16 py-20 md:py-28">
+        <div className="min-w-0 flex-[1_1_520px]">
+          <p className="eyebrow">Neurotechnology for the gut–brain axis</p>
+          <h1 className="heading-xl mt-5">Restoring the conversation between gut and brain.</h1>
+          <p className="mt-7 max-w-[560px] text-[20px] leading-relaxed text-ink">
+            CortiAura is developing a non-invasive wearable that works with the body’s own gut–brain connection,
+            engineered to the highest safety standards and guided by science.
           </p>
+          <div className="mt-10 flex flex-wrap gap-4">
+            <Link href="/founding" className="btn-primary">
+              Join the Founding Community
+            </Link>
+            <Link href="/#science" className="btn-outline">
+              Explore the science
+            </Link>
+          </div>
         </div>
-
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-          {/* Primary CTA: gradient fill */}
-          <a
-            href="/#get-involved"
-            className="inline-flex items-center justify-center rounded-md px-6 py-3 text-white font-bold shadow-md transition hover:opacity-95"
-            style={{
-              background:
-                'linear-gradient(90deg, #970148 0%, #FBDDCF 100%)',
-            }}
-          >
-            Join the Waitlist
-          </a>
-
-          {/* Secondary CTA: gradient border */}
-          <a
-            href="#learn-more"
-            className="relative inline-flex rounded-md p-[1.5px]"
-            style={{
-              background:
-                'linear-gradient(90deg, #970148 0%, #FBDDCF 100%)',
-            }}
-          >
-            <span className="inline-flex h-full w-full items-center justify-center rounded-[calc(0.375rem-1.5px)] px-6 py-3 text-white/90 bg-transparent backdrop-blur-[1px] transition-colors hover:bg-white/5">
-              Learn More
-            </span>
-          </a>
-        </div>
-
-        {/* Scroll cue to #stress */}
-        <div className="pointer-events-none absolute bottom-6 left-1/2 -translate-x-1/2">
-          <a
-            href="#stress"
-            aria-label="Scroll to stress section"
-            className="pointer-events-auto inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/30 text-white/80 opacity-70 hover:opacity-100 transition"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
-              <path fillRule="evenodd" d="M12 16a.75.75 0 0 1-.53-.22l-5-5a.75.75 0 1 1 1.06-1.06L12 14.19l4.47-4.47a.75.75 0 1 1 1.06 1.06l-5 5A.75.75 0 0 1 12 16z" clipRule="evenodd" />
-            </svg>
-          </a>
+        <div className="flex min-w-0 flex-[1_1_360px] justify-center">
+          <div className="flex aspect-square w-full max-w-[300px] items-center md:max-w-[440px] justify-center rounded-full bg-misty">
+            <div className="flex aspect-square w-[64%] items-center justify-center rounded-full bg-blush">
+              <img src="/assets/symbol.svg" alt="" className="w-[52%]" />
+            </div>
+          </div>
         </div>
       </div>
-      {/* Bottom gradient overlay to fade into next section */}
-      <div className="absolute bottom-0 h-24 w-full bg-gradient-to-b from-transparent to-[#0B0B1A]" />
     </section>
   );
 };
 
 export default Hero;
-

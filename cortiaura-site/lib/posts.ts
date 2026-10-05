@@ -5,9 +5,11 @@ import matter from 'gray-matter';
 export type FrontMatter = {
   title: string;
   date: string; // ISO or yyyy-MM-dd
-  summary?: string;
+  summary?: string; // also used as the meta description
+  seoTitle?: string; // browser tab / Google title; falls back to title
   tags?: string[];
   author?: string;
+  authorTitle?: string;
 };
 
 const postsDirectory = path.join(process.cwd(), 'content', 'posts');

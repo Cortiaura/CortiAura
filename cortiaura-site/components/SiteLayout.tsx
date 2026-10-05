@@ -6,27 +6,28 @@ import CookieBanner from './CookieBanner';
 
 type Props = {
   children: React.ReactNode;
-  className?: string;
-  transparentBg?: boolean;
 };
 
-const SiteLayout: React.FC<Props> = ({ children, className = '', transparentBg = false }) => {
+const SiteLayout: React.FC<Props> = ({ children }) => {
   return (
-    <div className={`relative min-h-screen overflow-hidden ${transparentBg ? 'bg-transparent' : 'bg-[#0B0B1A]'} ${className}`}>
+    <div className="flex min-h-screen flex-col bg-white">
       <Head>
-        <link rel="icon" href="/assets/favicon.svg?v=3" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/assets/android-chrome-512x512.png?v=3" />
-        <link rel="icon" type="image/png" sizes="512x512" href="/assets/android-chrome-512x512.png?v=3" />
-        <meta name="theme-color" content="#0B0B1A" />
+        <link rel="icon" href="/assets/favicon.svg?v=4" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/android-chrome-512x512.png?v=4" />
+        <link rel="icon" type="image/png" sizes="512x512" href="/assets/android-chrome-512x512.png?v=4" />
+        <meta name="theme-color" content="#970148" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
+      <a
+        href="#content"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:shadow"
+      >
+        Skip to content
+      </a>
       <Header />
-      {!transparentBg && (
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 -z-10 [background:radial-gradient(60%_60%_at_50%_40%,rgba(175,152,228,.18),transparent_60%)] aura-anim"
-        />
-      )}
-      <main>{children}</main>
+      <div id="content" className="flex-1">
+        {children}
+      </div>
       <SiteFooter />
       <CookieBanner />
     </div>
