@@ -21,11 +21,11 @@ const updates: Update[] = [
       'We have designed an early study focusing on safety and feasibility, and we are now building partnerships with clinical and academic collaborators to take it forward.',
   },
   {
-    tag: 'Investment',
-    title: 'Pre-seed round now open',
+    tag: 'Community',
+    title: 'Early community now open',
     body:
-      'We are raising our pre-seed round to fund prototype completion, safety testing and our early study. It is an early opportunity to back a UK-founded neurotechnology company working where the gut–brain axis, wearables and digital health meet.',
-    cta: { label: 'Talk to us about investing', href: '/contact' },
+      'Be among the first to follow CortiAura’s journey. Join our list for behind-the-scenes updates and priority access when we launch. Free to join, no obligation.',
+    cta: { label: 'Join the list', href: '/#get-involved' },
   },
 ];
 
