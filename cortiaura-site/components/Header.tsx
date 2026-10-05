@@ -1,35 +1,71 @@
 import React from 'react';
+import Link from 'next/link';
+
+const NAV = [
+  { href: '/#science', label: 'Science' },
+  { href: '/about', label: 'About' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/news', label: 'News' },
+  { href: '/investors', label: 'Investors' },
+];
 
 const Header: React.FC = () => {
-  const [scrolled, setScrolled] = React.useState(false);
-  React.useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+  const [open, setOpen] = React.useState(false);
 
   return (
-    <header
-      className={
-        `sticky top-0 inset-x-0 z-30 transition-colors` +
-        (scrolled
-          ? ' bg-[#231F20]/90 backdrop-blur border-b border-white/10'
-          : ' bg-gradient-to-b from-[#F9E4E5]/95 to-transparent border-b border-white/0')
-      }
-    >
-      <div className="container mx-auto px-4 lg:px-8 py-3 flex items-center justify-between">
-        <a href="/" className="flex items-center gap-2 text-white">
-          <img src="/assets/logo.svg" alt="CortiAura" className="h-16 md:h-20 lg:h-24 w-auto" />
-          <span className="sr-only">CortiAura</span>
-        </a>
-        <nav className="flex items-center gap-6">
-          <a href="/about" className="text-[#970148] hover:text-[#FBDDCF] font-medium transition-colors">About</a>
-          <a href="/blog" className="text-[#970148] hover:text-[#FBDDCF] font-medium transition-colors">Blog</a>
-          <a href="/news" className="text-[#970148] hover:text-[#FBDDCF] font-medium transition-colors">News</a>
-          <a href="/#get-involved" className="text-white rounded-md px-3 py-1.5 bg-gradient-to-r from-[#970148] to-[#FBDDCF] font-medium hover:opacity-95 transition">Join</a>
+    <header className="sticky top-0 z-30 border-b border-line bg-white/95 backdrop-blur">
+      <div className="container-site flex items-center justify-between gap-4 py-4">
+        <Link href="/" className="shrink-0" aria-label="CortiAura home">
+          <img src="/assets/logo.svg" alt="CortiAura" className="h-8 w-auto md:h-9" />
+        </Link>
+
+        <nav aria-label="Main" className="hidden items-center gap-7 text-[15px] font-medium lg:flex">
+          {NAV.map((item) => (
+            <Link key={item.href} href={item.href} className="text-raisin transition-colors hover:text-garnet">
+              {item.label}
+            </Link>
+          ))}
+          <Link
+            href="/founding"
+            className="inline-flex min-h-[44px] items-center rounded-md bg-garnet px-5 font-semibold text-white transition-colors hover:bg-imperial"
+          >
+            Join the Founding Community
+          </Link>
         </nav>
+
+        <button
+          type="button"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-line lg:hidden"
+          aria-expanded={open}
+          aria-controls="mobile-menu"
+          aria-label={open ? 'Close menu' : 'Open menu'}
+          onClick={() => setOpen((v) => !v)}
+        >
+          <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden>
+            {open ? <path d="M6 6l12 12M18 6L6 18" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
+          </svg>
+        </button>
       </div>
+
+      {open && (
+        <nav id="mobile-menu" aria-label="Mobile" className="border-t border-line bg-white lg:hidden">
+          <div className="container-site flex flex-col gap-1 py-4">
+            {NAV.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="rounded-md px-2 py-3 font-medium text-raisin hover:bg-misty"
+                onClick={() => setOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ))}
+            <Link href="/founding" className="btn-primary mt-2" onClick={() => setOpen(false)}>
+              Join the Founding Community
+            </Link>
+          </div>
+        </nav>
+      )}
     </header>
   );
 };
