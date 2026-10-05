@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Hero from '../sections/Hero';
+import LatestUpdates from '../sections/LatestUpdates';
 import StressEpidemic from '../sections/StressEpidemic';
 import Vision from '../sections/Vision';
 import Benefits from '../sections/Benefits';
@@ -24,6 +25,7 @@ export default function Home({ wellnessItems }: HomeProps) {
       </Head>
       <main>
         <Hero />
+        <LatestUpdates />
         <StressEpidemic />
         <Vision />
         <Benefits />
