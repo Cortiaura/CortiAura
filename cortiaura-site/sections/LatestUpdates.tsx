@@ -12,19 +12,19 @@ const updates: Update[] = [
     tag: 'Product',
     title: 'Prototype development underway',
     body:
-      'We have partnered with an experienced UK medical device engineering team to take CortiAura from concept to working prototype. Safety comes first: risk management, electrical safety and quality systems are being designed in from day one to recognised medical device standards, not added later. This de-risks the path to regulatory approval and to a device people can trust.',
+      'We have partnered with an experienced UK medical device engineering team to take CortiAura from concept to working prototype. Safety comes first: risk management, electrical safety and quality systems are being designed in from day one to recognised medical device standards, not added later. This sets the highest safety bar from the start, whatever route to market we take.',
   },
   {
     tag: 'Clinical',
-    title: 'Clinical pilot study designed',
+    title: 'Early safety study designed',
     body:
-      'We have designed an early pilot study to explore the potential of CortiAura for people living with gut–brain disorders, where the body’s stress response plays a central role. The study will focus on safety and feasibility, and we are now building partnerships with clinical and academic collaborators to take it forward.',
+      'We have designed an early study focusing on safety and feasibility, and we are now building partnerships with clinical and academic collaborators to take it forward.',
   },
   {
     tag: 'Investment',
     title: 'Pre-seed round now open',
     body:
-      'We are raising our pre-seed round to fund prototype completion, safety testing and the pilot study. It is an early opportunity to back a UK-founded neurotechnology company working where the gut–brain axis, wearables and digital health meet.',
+      'We are raising our pre-seed round to fund prototype completion, safety testing and our early study. It is an early opportunity to back a UK-founded neurotechnology company working where the gut–brain axis, wearables and digital health meet.',
     cta: { label: 'Talk to us about investing', href: '/contact' },
   },
 ];
@@ -40,7 +40,7 @@ const LatestUpdates: React.FC = () => {
           Latest from CortiAura
         </h2>
         <p className="mt-4 text-center text-[#F9F6FA]/75 max-w-2xl mx-auto">
-          Building carefully: a safe, well-engineered device, backed by clinical evidence.
+          Building carefully: safe, well-engineered and guided by science.
         </p>
 
         <div className="mt-12 grid gap-6 md:grid-cols-3">
