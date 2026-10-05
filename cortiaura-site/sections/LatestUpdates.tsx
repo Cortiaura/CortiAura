@@ -10,6 +10,12 @@ type Update = {
 
 export const UPDATES: Update[] = [
   {
+    tag: 'Recognition',
+    title: 'Top 15% in a UK neurotech programme',
+    body: 'Our proposal to the Blue Sky Proof-of-Concept Fund, a UK-wide neurotechnology programme run by Cambridge NeuroWorks and powered by ARIA, was ranked in the top 15% of applications.',
+    cta: { label: 'About the programme', href: 'https://cambridgeneuroworks.org/programmes/blue-sky-proof-of-concept-fund' },
+  },
+  {
     tag: 'Product',
     title: 'Prototype development underway',
     body: 'We have partnered with an experienced UK medical device engineering team to take CortiAura from concept to working prototype, with risk management, electrical safety and quality systems designed in from day one.',
@@ -37,14 +43,20 @@ const LatestUpdates: React.FC = () => {
         </h2>
         <div className="mt-12 flex flex-wrap gap-6">
           {UPDATES.map((u) => (
-            <article key={u.title} className="flex min-w-0 flex-[1_1_320px] flex-col rounded-xl border border-line p-8">
+            <article key={u.title} className="flex min-w-0 flex-[1_1_260px] flex-col rounded-xl border border-line p-7">
               <p className="text-[13px] font-semibold uppercase tracking-[0.1em] text-garnet">{u.tag}</p>
-              <h3 className="heading-md mt-3 !text-[28px]">{u.title}</h3>
+              <h3 className="heading-md mt-3 !text-[26px]">{u.title}</h3>
               <p className="mt-4 text-ink">{u.body}</p>
               {u.cta && (
-                <Link href={u.cta.href} className="mt-auto pt-5 font-semibold text-garnet hover:text-imperial">
-                  {u.cta.label} <span aria-hidden>→</span>
-                </Link>
+                u.cta.href.startsWith('http') ? (
+                  <a href={u.cta.href} target="_blank" rel="noopener noreferrer" className="mt-auto pt-5 font-semibold text-garnet hover:text-imperial">
+                    {u.cta.label} <span aria-hidden>↗</span>
+                  </a>
+                ) : (
+                  <Link href={u.cta.href} className="mt-auto pt-5 font-semibold text-garnet hover:text-imperial">
+                    {u.cta.label} <span aria-hidden>→</span>
+                  </Link>
+                )
               )}
             </article>
           ))}

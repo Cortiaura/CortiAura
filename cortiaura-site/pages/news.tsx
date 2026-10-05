@@ -9,6 +9,13 @@ type NewsItem = { title: string; summary: string; link: string; date: string };
 export async function getStaticProps() {
   const items: NewsItem[] = [
     {
+      title: 'CortiAura ranked in the top 15% for the Cambridge NeuroWorks Blue Sky Proof-of-Concept Fund',
+      summary:
+        'Our proposal to this UK-wide neurotechnology programme, run by Cambridge NeuroWorks and powered by ARIA, was ranked in the top 15% of applications.',
+      link: 'https://cambridgeneuroworks.org/programmes/blue-sky-proof-of-concept-fund',
+      date: '2026-10-05',
+    },
+    {
       title: 'Founding Community now open',
       summary: 'Join for free to follow our progress, with priority access and a founding-member discount at launch.',
       link: '/founding',
@@ -51,9 +58,15 @@ export default function News({ items }: { items: NewsItem[] }) {
                   {new Date(item.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}
                 </p>
                 <h2 className="heading-md mt-2">
-                  <Link href={item.link} className="hover:text-garnet">
-                    {item.title}
-                  </Link>
+                  {item.link.startsWith('http') ? (
+                    <a href={item.link} target="_blank" rel="noopener noreferrer" className="hover:text-garnet">
+                      {item.title}
+                    </a>
+                  ) : (
+                    <Link href={item.link} className="hover:text-garnet">
+                      {item.title}
+                    </Link>
+                  )}
                 </h2>
                 <p className="mt-2 text-ink">{item.summary}</p>
               </li>
