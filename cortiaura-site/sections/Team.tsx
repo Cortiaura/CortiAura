@@ -5,7 +5,7 @@ const PEOPLE = [
   {
     name: 'Dr Prashant Bhand',
     role: 'Founder & CEO',
-    bio: 'Consultant gastroenterologist in the NHS with 9–10 years’ specialist experience. Postgraduate qualification in AI and machine learning.',
+    bio: 'Gastroenterologist in the NHS with 9–10 years’ experience in gastroenterology. Postgraduate qualification in AI and machine learning.',
     image: '/assets/prashant.jpeg',
     position: '50% 20%',
   },

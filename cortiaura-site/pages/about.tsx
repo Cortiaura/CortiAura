@@ -8,7 +8,7 @@ const PERSON_SCHEMA = {
     {
       '@type': 'Person',
       name: 'Dr Prashant Bhand',
-      jobTitle: 'Consultant Gastroenterologist',
+      jobTitle: 'Gastroenterologist',
       worksFor: { '@type': 'Organization', name: 'CortiAura' },
       knowsAbout: ['Gastroenterology', 'Gut–brain axis', 'Vagus nerve', 'Neuromodulation'],
       url: 'https://cortiaura.com/about',
@@ -43,7 +43,7 @@ export default function AboutPage() {
         <title>About CortiAura | Clinician-led gut–brain neurotechnology</title>
         <meta
           name="description"
-          content="Meet the team behind CortiAura: Dr Prashant Bhand, NHS consultant gastroenterologist, and Dr Ratnakar Mishra, clinical neuroscientist."
+          content="Meet the team behind CortiAura: Dr Prashant Bhand, NHS gastroenterologist, and Dr Ratnakar Mishra, clinical neuroscientist."
         />
         <link rel="canonical" href="https://cortiaura.com/about" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(PERSON_SCHEMA) }} />
@@ -73,12 +73,12 @@ export default function AboutPage() {
               <p className="eyebrow">Founder &amp; CEO</p>
               <h2 id="founder-heading" className="heading-lg mt-3">Dr Prashant Bhand</h2>
               <p className="mt-5 text-ink">
-                Dr Prashant Bhand is an NHS consultant gastroenterologist with a focus on the gut–brain axis and
+                Dr Prashant Bhand is an NHS gastroenterologist with a focus on the gut–brain axis and
                 non-invasive neuromodulation. He founded CortiAura to explore safe, science-based ways to support the
                 body’s natural balance.
               </p>
               <ul className="mt-6 space-y-3 text-ink">
-                <li className="flex gap-3"><Check />NHS consultant gastroenterologist with 9–10 years’ specialist experience</li>
+                <li className="flex gap-3"><Check />NHS gastroenterologist with 9–10 years’ experience in gastroenterology</li>
                 <li className="flex gap-3"><Check />Trained at Grant Medical College, Mumbai; worked in Ireland before joining the NHS in 2017</li>
                 <li className="flex gap-3"><Check />Postgraduate qualification in AI and machine learning</li>
                 <li className="flex gap-3"><Check />Interests: the gut–brain axis, vagus nerve pathways and autonomic balance</li>

@@ -14,7 +14,7 @@ export default function BlogIndex({ posts }: { posts: Post[] }) {
         <title>Blog | The gut–brain connection explained | CortiAura</title>
         <meta
           name="description"
-          content="Evidence-based articles on the gut–brain axis, the vagus nerve and everyday wellbeing, written by an NHS consultant gastroenterologist."
+          content="Evidence-based articles on the gut–brain axis, the vagus nerve and everyday wellbeing, written by an NHS gastroenterologist."
         />
         <link rel="canonical" href="https://cortiaura.com/blog" />
       </Head>
@@ -22,7 +22,7 @@ export default function BlogIndex({ posts }: { posts: Post[] }) {
         <PageHeader
           eyebrow="Blog"
           title="The gut–brain connection, explained"
-          intro="Evidence-based articles written by an NHS consultant gastroenterologist, referenced to NHS, NICE and peer-reviewed research."
+          intro="Evidence-based articles written by an NHS gastroenterologist, referenced to NHS, NICE and peer-reviewed research."
         />
         <section className="container-site py-16">
           <div className="grid gap-6 md:grid-cols-2">

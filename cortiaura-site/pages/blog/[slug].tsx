@@ -74,8 +74,8 @@ export default function BlogPost({ frontMatter, slug, source, prev, next }: Prop
             <aside className="mt-14 flex flex-wrap items-center gap-5 rounded-xl bg-misty p-6" aria-label="About the author">
               <img src="/assets/prashant.jpeg" alt="" className="h-20 w-20 rounded-full object-cover" style={{ objectPosition: '50% 20%' }} />
               <p className="min-w-0 flex-[1_1_300px] text-[15px] text-ink">
-                <span className="font-semibold text-raisin">About the author:</span> {frontMatter.author} is an NHS consultant
-                gastroenterologist with 9–10 years of specialist experience, and the founder of CortiAura.
+                <span className="font-semibold text-raisin">About the author:</span> {frontMatter.author} is an NHS
+                gastroenterologist with 9–10 years of experience in gastroenterology, and the founder of CortiAura.
               </p>
             </aside>
           )}

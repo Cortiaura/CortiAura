@@ -4,7 +4,7 @@ import Link from 'next/link';
 import SiteLayout from '../components/SiteLayout';
 
 const WHY = [
-  { title: 'Founded where the problem is', text: 'Led by an NHS consultant gastroenterologist who sees the limits of today’s options in clinic every week.' },
+  { title: 'Founded where the problem is', text: 'Led by an NHS gastroenterologist who sees the limits of today’s options in clinic every week.' },
   { title: 'Safety-first engineering', text: 'Built to ISO 13485, ISO 14971 and IEC 60601 from the first prototype with an experienced UK medical device partner.' },
   { title: 'Proprietary technology', text: 'Our approach is protected as we develop it. Technical detail is shared under NDA.' },
   { title: 'Flexible route to market', text: 'Designed to the highest standards so we can choose the right market entry with confidence.' },
@@ -154,7 +154,7 @@ export default function InvestorsPage() {
               <h1 className="heading-xl mt-5 text-white">Building the next generation of gut–brain neurotechnology.</h1>
               <p className="mt-6 max-w-[620px] text-[20px] leading-relaxed text-[#E8DEDF]">
                 CortiAura is a UK neurotechnology company developing a non-invasive wearable that works with the gut–brain
-                axis, founded by a consultant gastroenterologist and a neuroscientist, and engineered to medical device
+                axis, founded by a gastroenterologist and a neuroscientist, and engineered to medical device
                 safety standards from day one.
               </p>
               <a href="#deck" className="btn-white mt-9">
