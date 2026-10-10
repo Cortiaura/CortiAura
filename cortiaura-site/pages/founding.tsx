@@ -156,9 +156,9 @@ export default function FoundingPage() {
           name="description"
           content="Be among the first to follow CortiAura, a new wearable built around the gut–brain connection. Free to join, with priority access and a founding-member discount at launch."
         />
-        <link rel="canonical" href="https://cortiaura.com/founding" />
+        <link rel="canonical" href="https://www.cortiaura.com/founding" />
         <meta property="og:title" content="Join the CortiAura Founding Community" />
-        <meta property="og:image" content="https://cortiaura.com/assets/og-image.png" />
+        <meta property="og:image" content="https://www.cortiaura.com/assets/og-image.png" />
       </Head>
       <main>
         <section className="bg-misty">

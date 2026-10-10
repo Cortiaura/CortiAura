@@ -1,7 +1,8 @@
 User-agent: *
 Allow: /
+Allow: /api/og
 Disallow: /admin/
 Disallow: /api/
 Disallow: /demo/
 
-Sitemap: https://cortiaura.com/sitemap.xml
+Sitemap: https://www.cortiaura.com/sitemap.xml

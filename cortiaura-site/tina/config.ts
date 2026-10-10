@@ -50,6 +50,15 @@ export default defineConfig({
             required: true,
           },
           {
+            type: "datetime",
+            name: "updated",
+            label: "Last Updated (optional)",
+            description: "Set when you make a meaningful change to the article. Shown to readers and to Google.",
+            ui: {
+              dateFormat: "MMM d, yyyy",
+            },
+          },
+          {
             type: "string",
             name: "summary",
             label: "Summary (Meta Description)",

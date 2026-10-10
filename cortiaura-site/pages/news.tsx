@@ -46,7 +46,7 @@ export default function News({ items }: { items: NewsItem[] }) {
           name="description"
           content="The latest news and progress updates from CortiAura, the UK neurotechnology company working with the gut–brain connection."
         />
-        <link rel="canonical" href="https://cortiaura.com/news" />
+        <link rel="canonical" href="https://www.cortiaura.com/news" />
       </Head>
       <main>
         <PageHeader eyebrow="News" title="Progress from CortiAura" intro="Milestones and company updates, newest first." />
