@@ -37,7 +37,7 @@ export default function Privacy() {
 
             <h2 id="processors">Who processes your data</h2>
             <p>
-              Founding Community details are stored with our email provider, MailerLite. Contact and investor enquiries
+              Founding Community and newsletter details are stored in our customer relationship system, HubSpot. Contact and investor enquiries
               are delivered to our inbox through our email delivery provider, Resend. If you accept analytics cookies, HubSpot
               records how you use this website on our behalf.
             </p>
