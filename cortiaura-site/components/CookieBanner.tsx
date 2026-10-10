@@ -1,42 +1,37 @@
 import React from 'react';
 import Link from 'next/link';
-
-const LS_KEY = 'cookieConsent';
+import { CONSENT_EVENT, readConsent, writeConsent } from '../lib/consent';
 
 const CookieBanner: React.FC = () => {
   const [visible, setVisible] = React.useState(false);
 
   React.useEffect(() => {
-    try {
-      setVisible(window.localStorage.getItem(LS_KEY) !== 'true');
-    } catch {
-      setVisible(true);
-    }
+    const update = () => setVisible(readConsent() === null);
+    update();
+    window.addEventListener(CONSENT_EVENT, update);
+    return () => window.removeEventListener(CONSENT_EVENT, update);
   }, []);
 
   if (!visible) return null;
 
-  const dismiss = () => {
-    try {
-      window.localStorage.setItem(LS_KEY, 'true');
-    } catch {
-      // Storage unavailable: hide for this visit only.
-    }
-    setVisible(false);
-  };
-
   return (
-    <div className="fixed inset-x-0 bottom-0 z-40 px-4 pb-4" role="region" aria-label="Cookie notice">
+    <div className="fixed inset-x-0 bottom-0 z-40 px-4 pb-4" role="region" aria-label="Cookie choices">
       <div className="mx-auto flex max-w-3xl flex-col gap-4 rounded-xl border border-line bg-white p-5 shadow-lg sm:flex-row sm:items-center sm:justify-between">
         <p className="text-[15px] text-ink">
-          We only use essential cookies needed for this site to work.{' '}
+          We use essential cookies to run this site. With your permission, we&rsquo;d also like to use analytics cookies
+          (HubSpot) to understand how visitors use it.{' '}
           <Link href="/cookies" className="text-garnet underline underline-offset-2">
             Learn more
           </Link>
         </p>
-        <button type="button" onClick={dismiss} className="btn-primary min-h-[44px] shrink-0 px-5">
-          OK
-        </button>
+        <div className="flex shrink-0 gap-3">
+          <button type="button" onClick={() => writeConsent('declined')} className="btn-outline min-h-[44px] px-5">
+            Decline
+          </button>
+          <button type="button" onClick={() => writeConsent('accepted')} className="btn-primary min-h-[44px] px-5">
+            Accept
+          </button>
+        </div>
       </div>
     </div>
   );
