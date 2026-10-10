@@ -107,7 +107,7 @@ function SignupForm() {
         </div>
         <fieldset className="flex flex-col gap-2.5">
           <legend className="field-label">
-            What interests you most? <span className="font-normal text-muted">(optional)</span>
+            Which topics would you like to hear about? <span className="font-normal text-muted">(optional)</span>
           </legend>
           <div className="mt-2.5 flex flex-wrap gap-2.5">
             {INTERESTS.map((i) => (
