@@ -19,8 +19,8 @@ export default function Cookies() {
 
             <h2 id="use">How we use them</h2>
             <p>
-              <strong>Essential cookies</strong> keep this website working, such as remembering your cookie choice. These
-              are always on.
+              <strong>Essential cookies</strong> keep this website working, such as remembering your cookie choice and whether
+              you have closed our sign-up box. These are always on.
             </p>
             <p>
               <strong>Analytics cookies</strong> are only set if you click &ldquo;Accept&rdquo;. We use HubSpot to
