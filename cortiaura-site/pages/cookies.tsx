@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import SiteLayout from '../components/SiteLayout';
 import PageHeader from '../components/PageHeader';
+import CookieSettingsButton from '../components/CookieSettingsButton';
 
 export default function Cookies() {
   return (
@@ -18,12 +19,22 @@ export default function Cookies() {
 
             <h2 id="use">How we use them</h2>
             <p>
-              We only use what is essential for this website to work, such as remembering that you have seen our cookie
-              notice. We do not use analytics, advertising or tracking cookies.
+              <strong>Essential cookies</strong> keep this website working, such as remembering your cookie choice. These
+              are always on.
+            </p>
+            <p>
+              <strong>Analytics cookies</strong> are only set if you click &ldquo;Accept&rdquo;. We use HubSpot to
+              understand which pages are visited and how people find us, and to show our sign-up form. HubSpot sets
+              cookies such as <code>__hstc</code>, <code>hubspotutk</code>, <code>__hssc</code> and <code>__hssrc</code>.
+              If you decline, none of these are set. We do not use advertising cookies.
             </p>
 
-            <h2 id="manage">Managing cookies</h2>
-            <p>You can delete or block cookies at any time in your browser settings.</p>
+            <h2 id="manage">Changing your choice</h2>
+            <p>You can change your mind at any time:</p>
+            <p>
+              <CookieSettingsButton />
+            </p>
+            <p>You can also delete or block cookies in your browser settings.</p>
 
             <h2 id="contact">Contact</h2>
             <p>

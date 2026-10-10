@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Header from './Header';
 import SiteFooter from './SiteFooter';
 import CookieBanner from './CookieBanner';
+import HubSpotTracking from './HubSpotTracking';
 
 type Props = {
   children: React.ReactNode;
@@ -30,6 +31,7 @@ const SiteLayout: React.FC<Props> = ({ children }) => {
       </div>
       <SiteFooter />
       <CookieBanner />
+      <HubSpotTracking />
     </div>
   );
 };
