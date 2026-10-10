@@ -1,7 +1,7 @@
 import type { GetServerSideProps } from 'next';
 import { getAllPosts } from '../lib/posts';
 
-const SITE_URL = 'https://cortiaura.com';
+const SITE_URL = 'https://www.cortiaura.com';
 
 const STATIC_PAGES = ['', '/about', '/founding', '/blog', '/news', '/contact'];
 
@@ -11,7 +11,7 @@ function buildSitemap(): string {
     ...STATIC_PAGES.map((p) => ({ loc: `${SITE_URL}${p || '/'}`, lastmod: undefined as string | undefined })),
     ...posts.map((post) => ({
       loc: `${SITE_URL}/blog/${post.slug}`,
-      lastmod: new Date(post.frontMatter.date).toISOString().slice(0, 10),
+      lastmod: new Date(post.frontMatter.updated || post.frontMatter.date).toISOString().slice(0, 10),
     })),
   ];
   const body = urls

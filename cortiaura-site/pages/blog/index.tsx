@@ -16,7 +16,7 @@ export default function BlogIndex({ posts }: { posts: Post[] }) {
           name="description"
           content="Evidence-based articles on the gut–brain axis, the vagus nerve and everyday wellbeing, written by an NHS gastroenterologist."
         />
-        <link rel="canonical" href="https://cortiaura.com/blog" />
+        <link rel="canonical" href="https://www.cortiaura.com/blog" />
       </Head>
       <main>
         <PageHeader

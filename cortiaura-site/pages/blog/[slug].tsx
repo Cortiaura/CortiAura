@@ -16,20 +16,23 @@ type Props = {
 };
 
 export default function BlogPost({ frontMatter, slug, source, prev, next }: Props) {
-  const url = `https://cortiaura.com/blog/${slug}`;
+  const url = `https://www.cortiaura.com/blog/${slug}`;
   const title = frontMatter.seoTitle || `${frontMatter.title} | CortiAura`;
+  const ogImage = `https://www.cortiaura.com/api/og?title=${encodeURIComponent(frontMatter.title)}`;
+  const updated = frontMatter.updated && frontMatter.updated !== frontMatter.date ? frontMatter.updated : undefined;
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: frontMatter.title,
     description: frontMatter.summary,
     datePublished: frontMatter.date,
+    dateModified: updated || frontMatter.date,
     mainEntityOfPage: url,
-    image: 'https://cortiaura.com/assets/og-image.png',
+    image: ogImage,
     author: frontMatter.author
-      ? { '@type': 'Person', name: frontMatter.author, jobTitle: frontMatter.authorTitle, url: 'https://cortiaura.com/about' }
+      ? { '@type': 'Person', name: frontMatter.author, jobTitle: frontMatter.authorTitle, url: 'https://www.cortiaura.com/about' }
       : { '@type': 'Organization', name: 'CortiAura' },
-    publisher: { '@type': 'Organization', name: 'CortiAura', logo: { '@type': 'ImageObject', url: 'https://cortiaura.com/assets/logo.svg' } },
+    publisher: { '@type': 'Organization', name: 'CortiAura', logo: { '@type': 'ImageObject', url: 'https://www.cortiaura.com/assets/logo.svg' } },
   };
 
   return (
@@ -42,7 +45,12 @@ export default function BlogPost({ frontMatter, slug, source, prev, next }: Prop
         <meta property="og:url" content={url} />
         <meta property="og:title" content={frontMatter.title} />
         {frontMatter.summary && <meta property="og:description" content={frontMatter.summary} />}
-        <meta property="og:image" content="https://cortiaura.com/assets/og-image.png" />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content={frontMatter.title} />
+        <meta property="article:published_time" content={frontMatter.date} />
+        {updated && <meta property="article:modified_time" content={updated} />}
         <meta name="twitter:card" content="summary_large_image" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       </Head>
@@ -61,6 +69,11 @@ export default function BlogPost({ frontMatter, slug, source, prev, next }: Prop
                 </>
               )}
               <time dateTime={frontMatter.date}>{format(new Date(frontMatter.date), 'd MMMM yyyy')}</time>
+              {updated && (
+                <>
+                  {' '}· Updated <time dateTime={updated}>{format(new Date(updated), 'd MMMM yyyy')}</time>
+                </>
+              )}
             </p>
           </div>
         </header>

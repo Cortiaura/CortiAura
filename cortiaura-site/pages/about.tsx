@@ -11,7 +11,7 @@ const PERSON_SCHEMA = {
       jobTitle: 'Gastroenterologist',
       worksFor: { '@type': 'Organization', name: 'CortiAura' },
       knowsAbout: ['Gastroenterology', 'Gut–brain axis', 'Vagus nerve', 'Neuromodulation'],
-      url: 'https://cortiaura.com/about',
+      url: 'https://www.cortiaura.com/about',
     },
     {
       '@type': 'Person',
@@ -19,7 +19,7 @@ const PERSON_SCHEMA = {
       jobTitle: 'Co-founder',
       worksFor: { '@type': 'Organization', name: 'CortiAura' },
       knowsAbout: ['Neuroscience', 'Synaptic plasticity', 'Neurodegeneration'],
-      url: 'https://cortiaura.com/about',
+      url: 'https://www.cortiaura.com/about',
     },
   ],
 };
@@ -45,7 +45,7 @@ export default function AboutPage() {
           name="description"
           content="Meet the team behind CortiAura: Dr Prashant Bhand, NHS gastroenterologist, and Dr Ratnakar Mishra, clinical neuroscientist."
         />
-        <link rel="canonical" href="https://cortiaura.com/about" />
+        <link rel="canonical" href="https://www.cortiaura.com/about" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(PERSON_SCHEMA) }} />
       </Head>
 

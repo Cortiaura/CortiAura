@@ -5,6 +5,7 @@ import matter from 'gray-matter';
 export type FrontMatter = {
   title: string;
   date: string; // ISO or yyyy-MM-dd
+  updated?: string; // date of the last meaningful update; shown on the article and in the sitemap
   summary?: string; // also used as the meta description
   seoTitle?: string; // browser tab / Google title; falls back to title
   tags?: string[];

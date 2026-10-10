@@ -66,7 +66,7 @@ export default function ContactPage() {
       <Head>
         <title>Contact | CortiAura</title>
         <meta name="description" content="Contact CortiAura with questions, clinical or research collaboration ideas, or feedback." />
-        <link rel="canonical" href="https://cortiaura.com/contact" />
+        <link rel="canonical" href="https://www.cortiaura.com/contact" />
       </Head>
       <main>
         <PageHeader
