@@ -99,6 +99,12 @@ body {
   .article .lead {
     @apply text-[21px] leading-[1.6] text-raisin md:text-[23px];
   }
+  .article blockquote {
+    @apply my-10 border-l-4 border-garnet py-1 pl-6 font-display text-[26px] font-medium leading-snug text-raisin md:text-[30px];
+  }
+  .article blockquote p {
+    @apply mt-0;
+  }
   .article figure {
     @apply mt-10 mb-2;
   }
