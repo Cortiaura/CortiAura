@@ -34,6 +34,17 @@ export default function BlogPost({ frontMatter, slug, source, prev, next }: Prop
       : { '@type': 'Organization', name: 'CortiAura' },
     publisher: { '@type': 'Organization', name: 'CortiAura', logo: { '@type': 'ImageObject', url: 'https://www.cortiaura.com/assets/logo.svg' } },
   };
+  const faqSchema = frontMatter.faq?.length
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: frontMatter.faq.map((f) => ({
+          '@type': 'Question',
+          name: f.q,
+          acceptedAnswer: { '@type': 'Answer', text: f.a },
+        })),
+      }
+    : null;
 
   return (
     <SiteLayout>
@@ -53,6 +64,9 @@ export default function BlogPost({ frontMatter, slug, source, prev, next }: Prop
         {updated && <meta property="article:modified_time" content={updated} />}
         <meta name="twitter:card" content="summary_large_image" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+        {faqSchema && (
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+        )}
       </Head>
       <main>
         <header className="bg-misty">

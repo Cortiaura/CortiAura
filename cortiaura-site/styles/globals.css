@@ -96,6 +96,15 @@ body {
   .article strong {
     @apply font-semibold text-raisin;
   }
+  .article figure {
+    @apply mt-10 mb-2;
+  }
+  .article figure img {
+    @apply h-auto w-full rounded-xl border border-line;
+  }
+  .article figcaption {
+    @apply mt-3 text-[15px] leading-relaxed text-muted;
+  }
   .article hr {
     @apply my-12 border-line;
   }
