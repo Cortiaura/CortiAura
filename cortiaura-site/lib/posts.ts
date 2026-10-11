@@ -11,6 +11,7 @@ export type FrontMatter = {
   tags?: string[];
   author?: string;
   authorTitle?: string;
+  faq?: { q: string; a: string }[]; // optional; adds FAQ rich-result markup for Google
 };
 
 const postsDirectory = path.join(process.cwd(), 'content', 'posts');
