@@ -96,6 +96,9 @@ body {
   .article strong {
     @apply font-semibold text-raisin;
   }
+  .article .lead {
+    @apply text-[21px] leading-[1.6] text-raisin md:text-[23px];
+  }
   .article figure {
     @apply mt-10 mb-2;
   }
