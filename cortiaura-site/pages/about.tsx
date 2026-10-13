@@ -1,27 +1,11 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import SiteLayout from '../components/SiteLayout';
+import { ORGANIZATION, PRASHANT, RATNAKAR } from '../lib/site';
 
 const PERSON_SCHEMA = {
   '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'Person',
-      name: 'Dr Prashant Bhand',
-      jobTitle: 'Gastroenterologist',
-      worksFor: { '@type': 'Organization', name: 'CortiAura' },
-      knowsAbout: ['Gastroenterology', 'Gut–brain axis', 'Vagus nerve', 'Neuromodulation'],
-      url: 'https://www.cortiaura.com/about',
-    },
-    {
-      '@type': 'Person',
-      name: 'Dr Ratnakar Mishra',
-      jobTitle: 'Co-founder',
-      worksFor: { '@type': 'Organization', name: 'CortiAura' },
-      knowsAbout: ['Neuroscience', 'Synaptic plasticity', 'Neurodegeneration'],
-      url: 'https://www.cortiaura.com/about',
-    },
-  ],
+  '@graph': [ORGANIZATION, PRASHANT, RATNAKAR],
 };
 
 const PRINCIPLES = [
@@ -83,11 +67,14 @@ export default function AboutPage() {
                 <li className="flex gap-3"><Check />Postgraduate qualification in AI and machine learning</li>
                 <li className="flex gap-3"><Check />Interests: the gut–brain axis, vagus nerve pathways and autonomic balance</li>
               </ul>
+              <Link href="/authors/prashant-bhand" className="mt-6 inline-block font-semibold text-garnet hover:text-imperial">
+                Read Dr Bhand’s articles <span aria-hidden>→</span>
+              </Link>
             </div>
           </div>
         </section>
 
-        <section className="bg-white" aria-labelledby="cofounder-heading">
+        <section id="ratnakar-mishra" className="bg-white" aria-labelledby="cofounder-heading">
           <div className="container-site flex flex-wrap-reverse items-start gap-14 border-t border-line py-20">
             <div className="min-w-0 flex-[1_1_420px]">
               <p className="eyebrow">Co-founder</p>

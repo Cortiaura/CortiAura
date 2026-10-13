@@ -6,6 +6,7 @@ import { serialize } from 'next-mdx-remote/serialize';
 import { format } from 'date-fns';
 import { getAllPosts, getPostBySlug, type FrontMatter } from '../../lib/posts';
 import SiteLayout from '../../components/SiteLayout';
+import { ORG_ID, PRASHANT_ID, PRASHANT_URL, WEBSITE_ID } from '../../lib/site';
 
 type Props = {
   frontMatter: FrontMatter;
@@ -20,6 +21,7 @@ export default function BlogPost({ frontMatter, slug, source, prev, next }: Prop
   const title = frontMatter.seoTitle || `${frontMatter.title} | CortiAura`;
   const ogImage = `https://www.cortiaura.com/api/og?title=${encodeURIComponent(frontMatter.title)}`;
   const updated = frontMatter.updated && frontMatter.updated !== frontMatter.date ? frontMatter.updated : undefined;
+  const isPrashant = /prashant/i.test(frontMatter.author || '');
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -29,10 +31,19 @@ export default function BlogPost({ frontMatter, slug, source, prev, next }: Prop
     dateModified: updated || frontMatter.date,
     mainEntityOfPage: url,
     image: ogImage,
-    author: frontMatter.author
-      ? { '@type': 'Person', name: frontMatter.author, jobTitle: frontMatter.authorTitle, url: 'https://www.cortiaura.com/about' }
-      : { '@type': 'Organization', name: 'CortiAura' },
-    publisher: { '@type': 'Organization', name: 'CortiAura', logo: { '@type': 'ImageObject', url: 'https://www.cortiaura.com/assets/logo.svg' } },
+    author: isPrashant
+      ? { '@type': 'Person', '@id': PRASHANT_ID, name: 'Dr Prashant Bhand', jobTitle: 'Gastroenterologist', url: PRASHANT_URL }
+      : frontMatter.author
+        ? { '@type': 'Person', name: frontMatter.author, jobTitle: frontMatter.authorTitle }
+        : { '@id': ORG_ID },
+    publisher: {
+      '@type': 'Organization',
+      '@id': ORG_ID,
+      name: 'CortiAura',
+      logo: { '@type': 'ImageObject', url: 'https://www.cortiaura.com/assets/logo.svg' },
+    },
+    isPartOf: { '@id': WEBSITE_ID },
+    inLanguage: 'en-GB',
   };
   const faqSchema = frontMatter.faq?.length
     ? {
@@ -78,7 +89,14 @@ export default function BlogPost({ frontMatter, slug, source, prev, next }: Prop
             <p className="mt-5 text-[15px] text-muted">
               {frontMatter.author && (
                 <>
-                  By <span className="font-semibold text-ink">{frontMatter.author}</span>
+                  By{' '}
+                  {isPrashant ? (
+                    <Link href="/authors/prashant-bhand" className="font-semibold text-ink underline-offset-2 hover:underline">
+                      {frontMatter.author}
+                    </Link>
+                  ) : (
+                    <span className="font-semibold text-ink">{frontMatter.author}</span>
+                  )}
                   {frontMatter.authorTitle ? `, ${frontMatter.authorTitle}` : ''} ·{' '}
                 </>
               )}
@@ -103,6 +121,14 @@ export default function BlogPost({ frontMatter, slug, source, prev, next }: Prop
               <p className="min-w-0 flex-[1_1_300px] text-[15px] text-ink">
                 <span className="font-semibold text-raisin">About the author:</span> {frontMatter.author} is an NHS
                 gastroenterologist with 9–10 years of experience in gastroenterology, and the founder of CortiAura.
+                {isPrashant && (
+                  <>
+                    {' '}
+                    <Link href="/authors/prashant-bhand" className="font-semibold text-garnet hover:text-imperial">
+                      More from Dr Bhand
+                    </Link>
+                  </>
+                )}
               </p>
             </aside>
           )}
