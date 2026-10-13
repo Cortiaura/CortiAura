@@ -7,29 +7,20 @@ import Safety from '../sections/Safety';
 import LatestUpdates from '../sections/LatestUpdates';
 import Team from '../sections/Team';
 import TwoPaths from '../sections/TwoPaths';
+import { ORGANIZATION, PRASHANT, RATNAKAR, ORG_ID, WEBSITE_ID } from '../lib/site';
 
 const STRUCTURED_DATA = {
   '@context': 'https://schema.org',
   '@graph': [
-    {
-      '@type': 'Organization',
-      '@id': 'https://www.cortiaura.com/#organization',
-      name: 'CortiAura',
-      url: 'https://www.cortiaura.com/',
-      logo: 'https://www.cortiaura.com/assets/logo.svg',
-      email: 'Prashant@cortiaura.com',
-      sameAs: ['https://www.linkedin.com/company/cortiaura', 'https://x.com/CortiAura'],
-      founder: [
-        { '@type': 'Person', name: 'Dr Prashant Bhand' },
-        { '@type': 'Person', name: 'Dr Ratnakar Mishra' },
-      ],
-    },
+    ORGANIZATION,
+    PRASHANT,
+    RATNAKAR,
     {
       '@type': 'WebSite',
-      '@id': 'https://www.cortiaura.com/#website',
+      '@id': WEBSITE_ID,
       url: 'https://www.cortiaura.com/',
       name: 'CortiAura',
-      publisher: { '@id': 'https://www.cortiaura.com/#organization' },
+      publisher: { '@id': ORG_ID },
     },
   ],
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { SOCIAL } from '../lib/site';
 
 const SiteFooter: React.FC = () => {
   return (
@@ -30,16 +31,18 @@ const SiteFooter: React.FC = () => {
         <div>
           <h2 className="font-semibold text-white">Follow us</h2>
           <ul className="mt-3 space-y-2 text-[15px]">
-            <li>
-              <a href="https://www.linkedin.com/company/cortiaura" target="_blank" rel="noopener noreferrer" className="hover:text-white">
-                LinkedIn
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/CortiAura" target="_blank" rel="noopener noreferrer" className="hover:text-white">
-                X (Twitter)
-              </a>
-            </li>
+            {[
+              { href: SOCIAL.linkedin, label: 'LinkedIn' },
+              { href: SOCIAL.instagram, label: 'Instagram' },
+              { href: SOCIAL.facebook, label: 'Facebook' },
+              { href: SOCIAL.x, label: 'X (Twitter)' },
+            ].map((s) => (
+              <li key={s.label}>
+                <a href={s.href} target="_blank" rel="noopener noreferrer me" className="hover:text-white">
+                  {s.label}
+                </a>
+              </li>
+            ))}
           </ul>
           <h2 className="mt-6 font-semibold text-white">Legal</h2>
           <ul className="mt-3 space-y-2 text-[15px]">
