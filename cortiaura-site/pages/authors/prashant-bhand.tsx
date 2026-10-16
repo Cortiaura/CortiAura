@@ -36,7 +36,7 @@ export default function PrashantBhandPage({ posts }: { posts: PostCard[] }) {
         <title>Dr Prashant Bhand, Gastroenterologist | CortiAura</title>
         <meta
           name="description"
-          content="Dr Prashant Bhand is an NHS gastroenterologist and the founder of CortiAura. Read his evidence-based articles on the gut–brain axis, the vagus nerve and heart rate variability."
+          content="Dr Prashant Bhand is an NHS gastroenterologist and founder of CortiAura. Read his evidence-based articles on the gut–brain axis and the vagus nerve."
         />
         <link rel="canonical" href={PRASHANT_URL} />
         <meta property="og:type" content="profile" />
