@@ -30,7 +30,7 @@ export default function Home({ posts, postCount }: Props) {
         <title>CortiAura™ | Non-invasive wearable for the gut–brain connection</title>
         <meta
           name="description"
-          content="CortiAura is a UK neurotechnology company developing a non-invasive wearable that works with the gut–brain axis and the vagus nerve. Learn the science and join our Founding Community."
+          content="CortiAura is a UK neurotechnology company developing a non-invasive wearable built around the gut–brain axis and vagus nerve. Join our Founding Community."
         />
         <link rel="canonical" href="https://www.cortiaura.com/" />
         <meta property="og:type" content="website" />
