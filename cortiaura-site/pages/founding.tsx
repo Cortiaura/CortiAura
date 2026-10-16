@@ -74,7 +74,7 @@ function SignupForm() {
   if (status.type === 'success') {
     return (
       <div className="py-8 text-center" role="status">
-        <img src="/assets/symbol.svg" alt="" className="mx-auto w-16" />
+        <img src="/assets/symbol.svg" alt="CortiAura symbol" className="mx-auto w-16" />
         <h2 className="heading-md mt-5">Welcome to the Founding Community.</h2>
         <p className="mt-3 text-ink">
           Thank you for joining. If we have asked you to confirm your email, please check your inbox. We will be in touch
@@ -154,7 +154,7 @@ export default function FoundingPage() {
         <title>Join the CortiAura Founding Community</title>
         <meta
           name="description"
-          content="Be among the first to follow CortiAura, a new wearable built around the gut–brain connection. Free to join, with priority access and a founding-member discount at launch."
+          content="Be among the first to follow CortiAura, a new wearable built around the gut–brain connection. Free to join, with priority access and a founding discount."
         />
         <link rel="canonical" href="https://www.cortiaura.com/founding" />
         <meta property="og:title" content="Join the CortiAura Founding Community" />
