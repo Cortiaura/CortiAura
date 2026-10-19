@@ -1,12 +1,8 @@
 import Head from 'next/head';
 import SiteLayout from '../components/SiteLayout';
-import Hero from '../sections/Hero';
-import GutBrain from '../sections/GutBrain';
-import Science from '../sections/Science';
-import Safety from '../sections/Safety';
-import LatestUpdates from '../sections/LatestUpdates';
-import Team from '../sections/Team';
-import TwoPaths from '../sections/TwoPaths';
+import type { GetStaticProps } from 'next';
+import HomePage, { type HomePost } from '../components/home/HomePage';
+import { getAllPosts } from '../lib/posts';
 import { ORGANIZATION, PRASHANT, RATNAKAR, ORG_ID, WEBSITE_ID } from '../lib/site';
 
 const STRUCTURED_DATA = {
@@ -25,9 +21,11 @@ const STRUCTURED_DATA = {
   ],
 };
 
-export default function Home() {
+type Props = { posts: HomePost[]; postCount: number };
+
+export default function Home({ posts, postCount }: Props) {
   return (
-    <SiteLayout>
+    <SiteLayout bare>
       <Head>
         <title>CortiAura™ | Non-invasive wearable for the gut–brain connection</title>
         <meta
@@ -50,15 +48,21 @@ export default function Home() {
         <meta name="twitter:image" content="https://www.cortiaura.com/assets/og-image.png" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(STRUCTURED_DATA) }} />
       </Head>
-      <main>
-        <Hero />
-        <GutBrain />
-        <Science />
-        <Safety />
-        <LatestUpdates />
-        <Team />
-        <TwoPaths />
-      </main>
+      <HomePage posts={posts} postCount={postCount} />
     </SiteLayout>
   );
 }
+
+const tagLabel = (t?: string) => (t ? t.charAt(0).toUpperCase() + t.slice(1) : 'Science');
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const all = getAllPosts();
+  const posts: HomePost[] = all.slice(0, 5).map((p) => ({
+    slug: p.slug,
+    title: p.frontMatter.title,
+    date: String(p.frontMatter.date),
+    summary: p.frontMatter.summary || '',
+    tag: tagLabel(p.frontMatter.tags?.[0]),
+  }));
+  return { props: { posts, postCount: all.length } };
+};

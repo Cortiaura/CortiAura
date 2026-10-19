@@ -8,9 +8,11 @@ import SignupPopup from './SignupPopup';
 
 type Props = {
   children: React.ReactNode;
+  /** Skip the standard header and footer (the homepage draws its own). */
+  bare?: boolean;
 };
 
-const SiteLayout: React.FC<Props> = ({ children }) => {
+const SiteLayout: React.FC<Props> = ({ children, bare = false }) => {
   return (
     <div className="flex min-h-screen flex-col bg-white">
       <Head>
@@ -26,11 +28,11 @@ const SiteLayout: React.FC<Props> = ({ children }) => {
       >
         Skip to content
       </a>
-      <Header />
+      {!bare && <Header />}
       <div id="content" className="flex-1">
         {children}
       </div>
-      <SiteFooter />
+      {!bare && <SiteFooter />}
       <CookieBanner />
       <HubSpotTracking />
       <SignupPopup />
