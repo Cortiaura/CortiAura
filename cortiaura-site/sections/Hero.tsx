@@ -24,7 +24,7 @@ const Hero: React.FC = () => {
         <div className="flex min-w-0 flex-[1_1_360px] justify-center">
           <div className="flex aspect-square w-full max-w-[300px] items-center md:max-w-[440px] justify-center rounded-full bg-misty">
             <div className="flex aspect-square w-[64%] items-center justify-center rounded-full bg-blush">
-              <img src="/assets/symbol.svg" alt="" className="w-[52%]" />
+              <img src="/assets/symbol.svg" alt="CortiAura symbol" className="w-[52%]" />
             </div>
           </div>
         </div>

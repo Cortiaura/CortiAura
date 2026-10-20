@@ -179,7 +179,7 @@ export default function ClinicsPage() {
               <a href="#register" className="btn-primary mt-9">Register your clinic</a>
             </div>
             <div className="flex min-w-0 flex-[1_1_240px] justify-center">
-              <img src="/assets/symbol.svg" alt="" className="w-[170px]" />
+              <img src="/assets/symbol.svg" alt="CortiAura symbol" className="w-[170px]" />
             </div>
           </div>
         </section>
