@@ -12,11 +12,10 @@ type Props = {
   frontMatter: FrontMatter;
   slug: string;
   source: MDXRemoteSerializeResult;
-  prev?: { slug: string; title: string } | null;
-  next?: { slug: string; title: string } | null;
+  related: { slug: string; title: string; summary: string | null }[];
 };
 
-export default function BlogPost({ frontMatter, slug, source, prev, next }: Props) {
+export default function BlogPost({ frontMatter, slug, source, related }: Props) {
   const url = `https://www.cortiaura.com/blog/${slug}`;
   const title = frontMatter.seoTitle || `${frontMatter.title} | CortiAura`;
   const ogImage = `https://www.cortiaura.com/api/og?title=${encodeURIComponent(frontMatter.title)}`;
@@ -138,22 +137,36 @@ export default function BlogPost({ frontMatter, slug, source, prev, next }: Prop
             speak to your GP.
           </p>
 
-          <nav className="mt-10 flex flex-wrap justify-between gap-4 border-t border-line pt-8 text-[15px]" aria-label="More articles">
-            <div>
-              {prev && (
-                <Link href={`/blog/${prev.slug}`} className="font-semibold text-garnet hover:text-imperial">
-                  <span aria-hidden>←</span> {prev.title}
-                </Link>
-              )}
-            </div>
-            <div>
-              {next && (
-                <Link href={`/blog/${next.slug}`} className="font-semibold text-garnet hover:text-imperial">
-                  {next.title} <span aria-hidden>→</span>
-                </Link>
-              )}
-            </div>
-          </nav>
+          {frontMatter.signup !== false && (
+            <aside className="mt-12 rounded-xl border border-line p-7" aria-label="Follow our work">
+              <p className="text-[13px] font-semibold uppercase tracking-[0.12em] text-muted">Follow our work</p>
+              <p className="mt-3 text-[17px] leading-relaxed text-ink">
+                Get new articles on the gut–brain connection and updates on our research, straight to your inbox.
+              </p>
+              <Link href="/founding" className="btn-primary mt-5">
+                Join the Founding Community
+              </Link>
+            </aside>
+          )}
+
+          {related.length > 0 && (
+            <nav className="mt-14 border-t border-line pt-10" aria-label="Related articles">
+              <h2 className="text-[22px] font-semibold text-raisin">Related articles</h2>
+              <ul className="mt-6 grid gap-5 md:grid-cols-3">
+                {related.map((r) => (
+                  <li key={r.slug} className="rounded-xl bg-misty p-5">
+                    <Link href={`/blog/${r.slug}`} className="font-semibold leading-snug text-raisin hover:text-garnet">
+                      {r.title}
+                    </Link>
+                    {r.summary && <p className="mt-2 line-clamp-3 text-[14px] leading-relaxed text-muted">{r.summary}</p>}
+                  </li>
+                ))}
+              </ul>
+              <Link href="/blog" className="mt-6 inline-block text-[15px] font-semibold text-garnet hover:text-imperial">
+                All articles <span aria-hidden>→</span>
+              </Link>
+            </nav>
+          )}
         </article>
       </main>
     </SiteLayout>
@@ -175,9 +188,19 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   if (idx === -1) return { notFound: true };
   const { frontMatter, content } = getPostBySlug(slug);
   const mdxSource = await serialize(content);
-  const prev = all[idx + 1] ? { slug: all[idx + 1].slug, title: all[idx + 1].frontMatter.title } : null;
-  const next = all[idx - 1] ? { slug: all[idx - 1].slug, title: all[idx - 1].frontMatter.title } : null;
+  // Related articles: most shared tags first, then most recent.
+  const tags = new Set((frontMatter.tags || []).map((t) => t.toLowerCase()));
+  const related = all
+    .filter((p) => p.slug !== slug)
+    .map((p) => ({
+      p,
+      score: (p.frontMatter.tags || []).filter((t) => tags.has(t.toLowerCase())).length,
+      time: new Date(p.frontMatter.date).valueOf(),
+    }))
+    .sort((a, b) => b.score - a.score || b.time - a.time)
+    .slice(0, 3)
+    .map(({ p }) => ({ slug: p.slug, title: p.frontMatter.title, summary: p.frontMatter.summary || null }));
   // Remove undefined values, which Next.js cannot serialise.
   const cleanFrontMatter = JSON.parse(JSON.stringify(frontMatter));
-  return { props: { frontMatter: cleanFrontMatter, slug, source: mdxSource, prev, next } };
+  return { props: { frontMatter: cleanFrontMatter, slug, source: mdxSource, related } };
 };

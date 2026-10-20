@@ -12,6 +12,7 @@ export type FrontMatter = {
   author?: string;
   authorTitle?: string;
   faq?: { q: string; a: string }[]; // optional; adds FAQ rich-result markup for Google
+  signup?: boolean; // false hides the Founding Community prompt (e.g. condition-focused articles)
 };
 
 const postsDirectory = path.join(process.cwd(), 'content', 'posts');
