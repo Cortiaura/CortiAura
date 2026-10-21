@@ -10,6 +10,12 @@ type Update = {
 
 export const UPDATES: Update[] = [
   {
+    tag: 'Funding',
+    title: 'SEIS and EIS advance assurance',
+    body: 'HMRC has given CortiAura advance assurance for the Seed Enterprise Investment Scheme (SEIS) and the Enterprise Investment Scheme (EIS).',
+    cta: { label: 'For investors', href: '/investors' },
+  },
+  {
     tag: 'Recognition',
     title: 'Top 15% in a UK neurotech programme',
     body: 'Our proposal to the Blue Sky Proof-of-Concept Fund, a UK-wide neurotechnology programme run by Cambridge NeuroWorks and powered by ARIA, was ranked in the top 15% of applications.',

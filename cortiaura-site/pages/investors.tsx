@@ -157,7 +157,12 @@ export default function InvestorsPage() {
                 axis, founded by a gastroenterologist and a neuroscientist, and engineered to medical device
                 safety standards from day one.
               </p>
-              <a href="#deck" className="btn-white mt-9">
+              <p className="mt-7 inline-flex items-center gap-2.5 rounded-full border border-white/25 px-4 py-2 text-[15px] text-white">
+                <span aria-hidden className="h-2 w-2 rounded-full bg-[#7FD39B]" />
+                HMRC advance assurance received for SEIS and EIS
+              </p>
+              <br />
+              <a href="#deck" className="btn-white mt-7">
                 Request the investor deck
               </a>
             </div>
@@ -240,7 +245,12 @@ export default function InvestorsPage() {
           <p className="container-site border-t border-line py-8 text-[13px] leading-relaxed text-muted">
             This page is for information only and is not an offer or invitation to buy shares. Investment opportunities are
             made available only to eligible investors through formal documentation. Investing in early-stage companies
-            carries significant risk, including the loss of all capital invested.
+            carries significant risk, including the loss of all capital invested. HMRC has given Dacpras Ltd, the company behind
+            CortiAura, advance assurance for SEIS and EIS. This is HMRC's provisional view, based on the information we supplied
+            and the law at the date of the notice, that it expects to authorise compliance certificates. It is not an endorsement
+            of the company and not a guarantee that any investor will receive tax relief, which depends on each investor's
+            circumstances and on the company continuing to meet the qualifying conditions. Tax rules can change. Please carry out
+            your own due diligence and seek independent tax and financial advice.
           </p>
         </section>
       </main>
