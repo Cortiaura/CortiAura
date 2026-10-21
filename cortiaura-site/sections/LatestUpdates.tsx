@@ -28,8 +28,8 @@ export const UPDATES: Update[] = [
   },
   {
     tag: 'Clinical',
-    title: 'Early safety study designed',
-    body: 'We have designed an early study focusing on safety and feasibility, and we are building partnerships with clinical and academic collaborators to take it forward.',
+    title: 'Early safety study in design',
+    body: 'We are designing an early study focusing on safety and feasibility, and building partnerships with clinical and academic collaborators to take it forward.',
   },
   {
     tag: 'Community',

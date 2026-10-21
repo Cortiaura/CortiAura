@@ -29,7 +29,7 @@ export async function getStaticProps() {
       date: '2026-10-05',
     },
     {
-      title: 'Early safety and feasibility study designed',
+      title: 'Early safety and feasibility study in design',
       summary: 'We are building partnerships with clinical and academic collaborators to take the study forward.',
       link: '/#latest',
       date: '2026-10-05',
