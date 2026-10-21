@@ -9,6 +9,13 @@ type NewsItem = { title: string; summary: string; link: string; date: string };
 export async function getStaticProps() {
   const items: NewsItem[] = [
     {
+      title: 'CortiAura receives HMRC advance assurance for SEIS and EIS',
+      summary:
+        'HMRC has given Dacpras Ltd, the company behind CortiAura, advance assurance for the Seed Enterprise Investment Scheme (SEIS) and the Enterprise Investment Scheme (EIS), based on the information we supplied. Advance assurance is not an endorsement of the company or a guarantee of tax relief for any investor.',
+      link: '/investors',
+      date: '2026-10-21',
+    },
+    {
       title: 'CortiAura ranked in the top 15% for the Cambridge NeuroWorks Blue Sky Proof-of-Concept Fund',
       summary:
         'Our proposal to this UK-wide neurotechnology programme, run by Cambridge NeuroWorks and powered by ARIA, was ranked in the top 15% of applications.',
