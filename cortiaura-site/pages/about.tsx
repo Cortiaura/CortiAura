@@ -77,7 +77,7 @@ export default function AboutPage() {
         <section id="ratnakar-mishra" className="bg-white" aria-labelledby="cofounder-heading">
           <div className="container-site flex flex-wrap-reverse items-start gap-14 border-t border-line py-20">
             <div className="min-w-0 flex-[1_1_420px]">
-              <p className="eyebrow">Co-founder</p>
+              <p className="eyebrow">Co-founder &amp; Chief Scientific Officer (CSO)</p>
               <h2 id="cofounder-heading" className="heading-lg mt-3">Dr Ratnakar Mishra</h2>
               <p className="mt-5 text-ink">
                 Dr Ratnakar Mishra is a clinical neuroscientist who has worked across leading academic centres and

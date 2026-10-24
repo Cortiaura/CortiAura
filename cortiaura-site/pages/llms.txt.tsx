@@ -16,7 +16,7 @@ function buildLlmsTxt(): string {
 Key facts:
 - Company: CortiAura, a UK neurotechnology start-up.
 - Founder: Dr Prashant Bhand, Gastroenterologist (NHS), 9–10 years of experience in gastroenterology.
-- Co-founder: Dr Ratnakar Mishra, clinical neuroscientist.
+- Co-founder and Chief Scientific Officer (CSO): Dr Ratnakar Mishra, clinical neuroscientist.
 - Focus: the gut–brain axis, the vagus nerve and the autonomic nervous system.
 - Status: the CortiAura wearable is in development. It is not available to buy and makes no medical claims.
 - Articles are educational, written by Dr Bhand, and referenced to the NHS, NICE and peer-reviewed research. They are not medical advice.

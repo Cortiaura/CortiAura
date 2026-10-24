@@ -45,7 +45,7 @@ const MENUS = [
 ];
 
 const TICKER = [
-  { href: '/news', node: <><b>Ranked top 15%</b> in the Cambridge NeuroWorks Blue Sky Proof-of-Concept Fund</> },
+  { href: '/news', node: <><b>Ranked top 15%</b> in the Blue Sky Proof-of-Concept Fund, run by Cambridge NeuroWorks in partnership with ARIA</> },
   { href: '#join', node: <><b>Founding Community now open</b>: priority access and a founding-member discount</> },
   { href: 'POST', node: null },
   { href: '/news', node: <><b>Prototype engineering underway</b> with a UK medical device partner</> },
@@ -427,7 +427,7 @@ export default function HomePage({ posts, postCount }: Props) {
       <div className="wrap">
         <div className="stats">
           <div className="stat"><b>3</b><p>Medical device standards designed in from day one</p></div>
-          <div className="stat"><b>Top 15<small>%</small></b><p>Ranked in a UK-wide neurotech programme, powered by ARIA</p></div>
+          <div className="stat"><b>Top 15<small>%</small></b><p>Of applications to a UK-wide neurotech fund run by Cambridge NeuroWorks with ARIA</p></div>
           <div className="stat"><b>~80<small>%</small></b><p>Of vagus nerve fibres carry signals from body to brain</p></div>
           <div className="stat"><b>0</b><p>Implants or drugs. Working from outside the body</p></div>
         </div>
@@ -593,8 +593,15 @@ export default function HomePage({ posts, postCount }: Props) {
       <div className="wrap">
         <div className="recog">
           <div className="num"><small>Recognition · Oct 2026</small>Top 15%</div>
-          <div><h2>Ranked in the top 15% of a UK-wide neurotech programme.</h2><p>Our proposal to the Blue Sky Proof-of-Concept Fund, run by Cambridge NeuroWorks and powered by ARIA, was ranked in the top 15% of applications.</p></div>
-          <a className="btn" href="https://cambridgeneuroworks.org/programmes/blue-sky-proof-of-concept-fund" target="_blank" rel="noopener noreferrer">About the programme ↗</a>
+          <div>
+            <h2>Ranked in the top 15% of a UK-wide neurotechnology programme.</h2>
+            <p>Our proposal to the Blue Sky Proof-of-Concept Fund was ranked in the top 15% of applications. The fund is a UK-wide initiative run by Cambridge NeuroWorks in partnership with ARIA, the UK government’s Advanced Research and Invention Agency.</p>
+            <p className="recog-note">This ranking relates to our application only. It is not funding, endorsement or approval of CortiAura by Cambridge NeuroWorks or ARIA.</p>
+          </div>
+          <div className="recog-links">
+            <a className="btn" href="https://cambridgeneuroworks.org/programmes/blue-sky-proof-of-concept-fund" target="_blank" rel="noopener noreferrer">About the fund ↗</a>
+            <a className="btn" href="https://www.aria.org.uk/" target="_blank" rel="noopener noreferrer">About ARIA ↗</a>
+          </div>
         </div>
       </div>
     </section>
@@ -606,7 +613,7 @@ export default function HomePage({ posts, postCount }: Props) {
           <Link className="btn btn-g" href="/news">All news →</Link>
         </div>
         <div className="news">
-          <Link className="nc" href="/news"><span className="cat">Recognition</span><h3>Top 15% in a UK neurotech programme</h3><p>Ranked in the top 15% of applications to the Blue Sky Proof-of-Concept Fund.</p><time>5 Oct 2026</time></Link>
+          <Link className="nc" href="/news"><span className="cat">Recognition</span><h3>Top 15% in a UK neurotech programme</h3><p>Ranked in the top 15% of applications to the Blue Sky Proof-of-Concept Fund, run by Cambridge NeuroWorks in partnership with ARIA.</p><time>5 Oct 2026</time></Link>
           <Link className="nc" href="/news"><span className="cat">Product</span><h3>Prototype development underway</h3><p>An experienced UK medical device engineering team is taking CortiAura from concept to working prototype.</p><time>5 Oct 2026</time></Link>
           <Link className="nc" href="/news"><span className="cat">Clinical</span><h3>Early safety study designed</h3><p>An early study focused on safety and feasibility, with clinical and academic partnerships in progress.</p><time>5 Oct 2026</time></Link>
           <a className="nc" href="#join"><span className="cat">Community</span><h3>Founding Community now open</h3><p>Priority access and an exclusive founding-member discount when we launch. Free to join.</p><span className="go">Join now →</span></a>
@@ -635,7 +642,7 @@ export default function HomePage({ posts, postCount }: Props) {
               <svg viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="#fff" strokeOpacity=".18"><circle cx={100} cy={100} r={40} /><circle cx={100} cy={100} r={64} /><circle cx={100} cy={100} r={88} /></g></svg>
               <img className="photo" src="/assets/team/ratnakar-mishra.jpg" alt="Dr Ratnakar Mishra" />
             </div>
-            <div className="body"><span className="role">Co-founder</span><h3>Dr Ratnakar Mishra</h3><p>Clinical neuroscientist. PhD, University of Göttingen; postdoctoral research, University of Cambridge.</p><div className="tags"><span>Neuroscience</span><span>Göttingen</span><span>Cambridge</span></div></div>
+            <div className="body"><span className="role">Co-founder &amp; Chief Scientific Officer</span><h3>Dr Ratnakar Mishra</h3><p>Clinical neuroscientist. PhD, University of Göttingen; postdoctoral research, University of Cambridge.</p><div className="tags"><span>Neuroscience</span><span>Göttingen</span><span>Cambridge</span></div></div>
           </article>
         </div>
       </div>
@@ -688,7 +695,7 @@ export default function HomePage({ posts, postCount }: Props) {
             <h3>Progress so far</h3>
             <ul className="ticks">
               <li>Concept and scientific basis established</li>
-              <li>Ranked top 15% in the Cambridge NeuroWorks Blue Sky PoC Fund</li>
+              <li>Ranked top 15% in the Blue Sky PoC Fund (Cambridge NeuroWorks, in partnership with ARIA)</li>
               <li>UK engineering partner engaged, prototype underway</li>
               <li>Early safety study designed</li>
               <li>Regulatory roadmap in place</li>

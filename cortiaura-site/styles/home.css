@@ -227,6 +227,8 @@
 .ca-home .recog .num small{display:block;font:500 .72rem var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--deep-muted);margin-bottom:10px}
 .ca-home .recog h2{font-size:clamp(1.5rem,2.6vw,2.1rem)}
 .ca-home .recog p{color:var(--deep-muted);margin-top:12px;max-width:52ch}
+.ca-home .recog .recog-note{font-size:.8rem;margin-top:14px;opacity:.85}
+.ca-home .recog-links{display:grid;gap:10px;justify-items:start}
 .ca-home .recog .btn{background:transparent;border-color:rgba(255,255,255,.3);color:var(--deep-ink)}
 @media (max-width:820px){
 .ca-home .recog{grid-template-columns:1fr;gap:20px}

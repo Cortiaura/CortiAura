@@ -11,7 +11,7 @@ const PEOPLE = [
   },
   {
     name: 'Dr Ratnakar Mishra',
-    role: 'Co-founder',
+    role: 'Co-founder & Chief Scientific Officer (CSO)',
     bio: 'Clinical neuroscientist. PhD, University of Göttingen; postdoctoral research, University of Cambridge.',
     image: '/assets/team/ratnakar-mishra.jpg',
     position: '50% 15%',

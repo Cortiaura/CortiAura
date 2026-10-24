@@ -12,7 +12,7 @@ const WHY = [
 
 const PROGRESS = [
   'Concept and scientific basis established',
-  'Ranked in the top 15% of applications to the Cambridge NeuroWorks Blue Sky Proof-of-Concept Fund, powered by ARIA',
+  'Ranked in the top 15% of applications to the Blue Sky Proof-of-Concept Fund, run by Cambridge NeuroWorks in partnership with ARIA (ranking only; not funding or endorsement)',
   'UK medical device engineering partner engaged; prototype development underway',
   'Early safety and feasibility study in design',
   'Regulatory and quality roadmap in place',
