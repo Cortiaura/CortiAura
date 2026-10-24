@@ -52,7 +52,7 @@ export const RATNAKAR = {
   '@type': 'Person',
   '@id': RATNAKAR_ID,
   name: 'Dr Ratnakar Mishra',
-  jobTitle: 'Co-founder',
+  jobTitle: 'Co-founder and Chief Scientific Officer',
   url: `${SITE_URL}/about`,
   worksFor: { '@id': ORG_ID },
   knowsAbout: ['Neuroscience', 'Synaptic plasticity', 'Neurodegeneration'],

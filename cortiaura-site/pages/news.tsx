@@ -18,7 +18,7 @@ export async function getStaticProps() {
     {
       title: 'CortiAura ranked in the top 15% for the Cambridge NeuroWorks Blue Sky Proof-of-Concept Fund',
       summary:
-        'Our proposal to this UK-wide neurotechnology programme, run by Cambridge NeuroWorks and powered by ARIA, was ranked in the top 15% of applications.',
+        'Our proposal to the Blue Sky Proof-of-Concept Fund, a UK-wide initiative run by Cambridge NeuroWorks in partnership with ARIA (the UK government’s Advanced Research and Invention Agency), was ranked in the top 15% of applications. This ranking relates to our application only and is not funding or endorsement by Cambridge NeuroWorks or ARIA.',
       link: 'https://cambridgeneuroworks.org/programmes/blue-sky-proof-of-concept-fund',
       date: '2026-10-05',
     },
