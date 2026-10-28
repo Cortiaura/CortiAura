@@ -14,7 +14,7 @@ import { CONSENT_EVENT, readConsent } from '../lib/consent';
 const STORE_KEY = 'signupPopup';
 const SNOOZE_DAYS = 30;
 const DELAY_MS = 25000;
-const HIDDEN_ON = ['/founding', '/investors', '/contact', '/privacy', '/cookies'];
+const HIDDEN_ON = ['/founding', '/investors', '/research', '/contact', '/privacy', '/cookies'];
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 type Choice = 'founding' | 'newsletter';

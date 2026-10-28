@@ -22,6 +22,7 @@ const SiteFooter: React.FC = () => {
             <li><Link href="/blog" className="hover:text-white">Blog</Link></li>
             <li><Link href="/news" className="hover:text-white">News</Link></li>
             <li><Link href="/founding" className="hover:text-white">Founding Community</Link></li>
+            <li><Link href="/research" className="hover:text-white">Get involved in research</Link></li>
             <li><Link href="/clinics" className="hover:text-white">For clinics</Link></li>
             <li><Link href="/investors" className="hover:text-white">Investors</Link></li>
             <li><Link href="/contact" className="hover:text-white">Contact</Link></li>
