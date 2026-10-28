@@ -45,6 +45,7 @@ const MENUS = [
 ];
 
 const TICKER = [
+  { href: '/research', node: <><b>Research register now open</b>: help shape gut–brain research. No study is recruiting yet</> },
   { href: '/news', node: <><b>Ranked top 15%</b> in the Blue Sky Proof-of-Concept Fund, run by Cambridge NeuroWorks in partnership with ARIA</> },
   { href: '#join', node: <><b>Founding Community now open</b>: priority access and a founding-member discount</> },
   { href: 'POST', node: null },
@@ -305,7 +306,7 @@ export default function HomePage({ posts, postCount }: Props) {
           <span className="tag">Update</span>
           <Link className="msg" href={tickHref} style={{ opacity: tickFade ? 0 : 1 }} aria-live="polite">{tickNode}</Link>
           <span className="count">0{tick + 1}/0{TICKER.length}</span>
-          <span className="side"><Link href="/clinics">For clinics</Link><Link href="/contact">Researchers</Link><Link href="/investors">Investors</Link></span>
+          <span className="side"><Link href="/research">Get involved in research</Link><Link href="/clinics">For clinics</Link><Link href="/contact">Researchers</Link><Link href="/investors">Investors</Link></span>
         </div>
       </div>
 
@@ -341,6 +342,7 @@ export default function HomePage({ posts, postCount }: Props) {
                 <Link href="/blog" onClick={() => setMenu(null)}><b>All articles</b><i>{postCount} articles on the gut–brain connection.</i></Link>
               </div>
             </div>
+            <Link href="/research">Research <span className="pill">New</span></Link>
             <Link href="/clinics">For clinics</Link>
             <Link href="/investors">Investors <span className="pill">Pre-seed</span></Link>
           </nav>
@@ -353,7 +355,7 @@ export default function HomePage({ posts, postCount }: Props) {
           <details><summary>Science <span>+</span></summary><Link href="/blog/what-is-the-gut-brain-axis">The gut–brain axis</Link><a href="#science">How CortiAura works</a><a href="#safety">Safety and standards</a><a href="#faq">References</a></details>
           <details><summary>Company <span>+</span></summary><Link href="/about">About</Link><Link href="/news">News</Link><a href="#safety">Roadmap</a><Link href="/contact">Contact</Link></details>
           <details><summary>Learn <span>+</span></summary>{posts.slice(0, 3).map((p) => <Link key={p.slug} href={`/blog/${p.slug}`}>{p.title}</Link>)}<Link href="/blog">All articles</Link></details>
-          <Link className="mlink" href="/clinics">For clinics</Link><Link className="mlink" href="/investors">Investors · Pre-seed open</Link>
+          <Link className="mlink" href="/research">Get involved in research</Link><Link className="mlink" href="/clinics">For clinics</Link><Link className="mlink" href="/investors">Investors · Pre-seed open</Link>
           <a className="btn btn-p" href="#join">Join the Founding Community</a>
         </div>
       </header>
@@ -370,6 +372,7 @@ export default function HomePage({ posts, postCount }: Props) {
                 <a className="btn btn-p" href="#join">Join the Founding Community <span className="arrow">→</span></a>
                 <a className="btn btn-g" href="#science">Explore the science</a>
               </div>
+              <p className="hero-research">Interested in research? <Link href="/research">Join our research register <span className="arrow">→</span></Link></p>
               <div className="founders-line">
                 <div className="mono-stack"><img className="mono m1" src="/assets/prashant.jpeg" alt="Dr Prashant Bhand" /><img className="mono m2" src="/assets/team/ratnakar-mishra.jpg" alt="Dr Ratnakar Mishra" /></div>
                 <span>Founded by an <b>NHS gastroenterologist</b> and a <b>clinical neuroscientist</b></span>
@@ -620,6 +623,32 @@ export default function HomePage({ posts, postCount }: Props) {
         </div>
       </div>
     </section>
+    {/* RESEARCH */}
+    <section id="research" className="sci">
+      <div className="wrap">
+        <div className="pg">
+          <div className="pg-intro">
+            <span className="eyebrow">Get involved in research</span>
+            <h2>Help shape research into the <em className="s">gut–brain connection.</em></h2>
+            <p className="lede">We are building a research programme on the gut–brain axis, and we expect future studies to include people living with digestive conditions such as IBS and Crohn’s disease. Register your interest now, before any study begins.</p>
+            <div className="cta-row"><Link className="btn btn-p" href="/research#register">Register your interest <span className="arrow">→</span></Link><Link className="btn btn-g" href="/research">How it works</Link></div>
+            <div className="who"><b>Topics we research</b>
+              <ul className="chiplist"><li>The gut–brain axis</li><li>Digestive health</li><li>The vagus nerve</li><li>Stress, sleep and recovery</li></ul>
+            </div>
+          </div>
+          <div className="pg-panel">
+            <h3>Two ways to get involved</h3>
+            <ul className="ticks">
+              <li><span><b>Research interest register.</b> Hear first when a study opens, then decide whether to take part.</span></li>
+              <li><span><b>Patient and public panel.</b> Help design studies before they start, in short online sessions.</span></li>
+            </ul>
+            <h3 style={{marginTop: 28}}>Good to know</h3>
+            <ol className="flow"><li><b>No study is recruiting yet</b><span>Registering is free and does not enrol you.</span></li><li><b>Approved before it starts</b><span>Every study needs independent ethics approval first.</span></li><li><b>No health questions</b><span>Just your name, email and how you’d like to help.</span></li></ol>
+            <p className="small">Run by CortiAura, an independent company. Not an NHS service.</p>
+          </div>
+        </div>
+      </div>
+    </section>
     {/* TEAM */}
     <section id="team" style={{paddingTop: 0}}>
       <div className="wrap team-grid">
@@ -766,6 +795,7 @@ export default function HomePage({ posts, postCount }: Props) {
           <details><summary>How does stress affect the gut?</summary><p>When you are stressed, your body shifts towards “fight or flight”. The nerves that control the gut respond too, which can change how it moves and how sensitive it feels. NHS guidance notes that stress and anxiety can trigger or worsen gut symptoms in some people.<sup><a href="#refs">[1]</a><a href="#refs">[3]</a></sup></p></details>
           <details><summary>What is non-invasive vagus nerve stimulation?</summary><p>Vagus nerve stimulation uses gentle electrical signals to stimulate the vagus nerve. Implanted stimulators have been used in epilepsy care for more than 20 years. Non-invasive approaches work through the skin, at the neck or the ear, with no surgery; one such device is recommended by NICE for cluster headache. A 2022 review of ear-based stimulation studies found side effects were generally mild and short-lived. Research into other uses is ongoing.<sup><a href="#refs">[4]</a><a href="#refs">[5]</a><a href="#refs">[6]</a></sup></p></details>
           <details><summary>Can I buy CortiAura yet?</summary><p>Not yet. CortiAura is in development. <a href="#join">Join our Founding Community</a> and we will let you know about our progress and when CortiAura becomes available.</p></details>
+          <details><summary>Can I take part in a CortiAura study?</summary><p>No study is recruiting yet. You can <Link href="/research">join our research interest register</Link> to hear first when one opens, or our patient and public panel to help design studies. Every study will start only once it has independent ethics approval.</p></details>
           <details className="refs" id="refs"><summary>References</summary><ol>
               <li>Mayer EA. Gut feelings: the emerging biology of gut–brain communication. <a href="https://www.nature.com/articles/nrn3071" target="_blank" rel="noopener noreferrer">Nature Reviews Neuroscience 2011;12:453–466.</a></li>
               <li>Bonaz B, Bazin T, Pellissier S. The vagus nerve at the interface of the microbiota–gut–brain axis. <a href="https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2018.00049/full" target="_blank" rel="noopener noreferrer">Frontiers in Neuroscience 2018;12:49.</a></li>
@@ -807,7 +837,7 @@ export default function HomePage({ posts, postCount }: Props) {
               <p style={{ display: 'flex', gap: 8, alignItems: 'center', marginTop: 16 }}><span className="dot" />Prototype engineering in progress</p>
             </div>
             <div><h4>Explore</h4><ul><li><Link href="/about">About</Link></li><li><a href="#science">Science</a></li><li><Link href="/blog">Blog</Link></li><li><Link href="/news">News</Link></li></ul></div>
-            <div><h4>Get involved</h4><ul><li><Link href="/founding">Founding Community</Link></li><li><Link href="/clinics">For clinics</Link></li><li><Link href="/investors">Investors</Link></li><li><Link href="/contact">Contact</Link></li></ul></div>
+            <div><h4>Get involved</h4><ul><li><Link href="/founding">Founding Community</Link></li><li><Link href="/research">Get involved in research</Link></li><li><Link href="/clinics">For clinics</Link></li><li><Link href="/investors">Investors</Link></li><li><Link href="/contact">Contact</Link></li></ul></div>
             <div><h4>Learn</h4><ul><li><Link href="/blog/what-is-the-gut-brain-axis">The gut–brain axis</Link></li><li><Link href="/blog/what-does-the-vagus-nerve-do">The vagus nerve</Link></li><li><Link href="/blog/heart-rate-variability-explained">Heart rate variability</Link></li><li><Link href="/blog/sleep-and-gut-health">Sleep and gut health</Link></li></ul></div>
             <div><h4>Follow</h4><ul>
               <li><a href={SOCIAL.linkedin} target="_blank" rel="noopener noreferrer me">LinkedIn</a></li>
@@ -830,6 +860,7 @@ export default function HomePage({ posts, postCount }: Props) {
           <span className="t">Get in touch</span>
           <a href="mailto:Prashant@cortiaura.com?subject=Enquiry%20from%20cortiaura.com"><b>Email us</b><i>Prashant@cortiaura.com</i></a>
           <Link href="/contact"><b>Contact form</b><i>Questions and collaborations</i></Link>
+          <Link href="/research"><b>Join the research register</b><i>Help shape gut–brain research</i></Link>
           <Link href="/clinics"><b>Register your clinic</b><i>Become a founding clinic partner</i></Link>
           <Link href="/investors"><b>Request the investor deck</b><i>Pre-seed round open</i></Link>
           <span className="n">We usually reply within two working days. Not for medical advice.</span>
