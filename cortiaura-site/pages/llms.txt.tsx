@@ -28,6 +28,7 @@ Key facts:
 - [Dr Prashant Bhand](${SITE_URL}/authors/prashant-bhand): Author profile and all articles by Dr Bhand.
 - [Founding Community](${SITE_URL}/founding): Join the early-access list for updates.
 - [For clinics](${SITE_URL}/clinics): Information for clinical partners.
+- [Get involved in research](${SITE_URL}/research): Register interest in future research or join the patient and public involvement panel. No study is recruiting yet.
 - [News](${SITE_URL}/news): Company updates.
 - [Contact](${SITE_URL}/contact): How to get in touch.
 
