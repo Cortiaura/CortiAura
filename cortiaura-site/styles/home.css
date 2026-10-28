@@ -417,3 +417,7 @@
 .ca-home .stage svg.nerve,.ca-home .portrait svg,.ca-home .post .cover svg,.ca-home .sp .cover svg{display:block}
 .ca-home .hero h1,.ca-home h2,.ca-home h3{font-family:var(--f-display)}
 .ca-home .mnav summary span{font-family:var(--f-mono)}
+
+/* Hero secondary link to the research page */
+.ca-home .hero-research{margin-top:18px;font-size:.98rem;color:var(--muted)}
+.ca-home .hero-research a{color:var(--plum);font-weight:600;text-decoration:underline;text-underline-offset:3px}
